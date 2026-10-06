@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio of Ruby Ann, a 3rd Year Bachelor of Science in Information Technology student."
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Ruby Ann | Student Portfolio</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+ruby-ann-portfolio/
+├── public/
+│   └── profile.jpg
+├── src/
+│   ├── main.jsx
+│   └── styles.css
+├── index.html
+└── package.json
+<section className="hero">
+  <div className="hero-text">
+    <p className="welcome">WELCOME TO MY PORTFOLIO</p>
+
+    <h1>
+      Hi, I'm <span>Ruby Ann</span>
+    </h1>
+
+    <h2>3rd Year BSIT Student</h2>
+
+    <p>
+      I am a Bachelor of Science in Information Technology student
+      interested in web development, programming, and creating useful
+      digital solutions.
+    </p>
+
+    <div className="hero-buttons">
+      <a href="#projects" className="btn primary">View My Projects</a>
+      <a href="#contact" className="btn secondary">Contact Me</a>
+    </div>
+  </div>
+
+  <div className="profile-container">
+    <div className="profile-circle">
+      <img src="/profile.jpg" alt="Ruby Ann Profile" />
+    </div>
+  </div>
+</section>
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 80px 8%;
+  background: #ffffff;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.welcome {
+  color: #7c3aed;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin: 15px 0;
+  color: #222;
+}
+
+.hero h1 span {
+  color: #7c3aed;
+}
+
+.hero h2 {
+  font-size: 25px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #666;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary {
+  background: #7c3aed;
+  color: white;
+}
+
+.secondary {
+  border: 2px solid #7c3aed;
+  color: #7c3aed;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-circle {
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  padding: 8px;
+  background: #7c3aed;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 50px 6%;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .profile-circle {
+    width: 250px;
+    height: 250px;
+  }
+}
