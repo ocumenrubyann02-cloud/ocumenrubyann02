@@ -1,0 +1,393 @@
+import { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import './styles.css';
+
+const skills = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'React.js',
+  'Git',
+  'GitHub',
+  'UI/UX Design',
+  'Responsive Design'
+];
+
+const projects = [
+  {
+    title: 'QR Code Attendance System',
+    description:
+      'A classroom attendance system designed to make checking attendance faster and more organized.',
+    technology: ['HTML', 'CSS', 'JavaScript'],
+  },
+  {
+    title: 'Student Enrollment System',
+    description:
+      'A simple system concept for managing student information, enrollment, and academic records.',
+    technology: ['React.js', 'JavaScript', 'CSS'],
+  },
+  {
+    title: 'Personal Portfolio Website',
+    description:
+      'A responsive personal website that presents my profile, education, skills, and projects.',
+    technology: ['React.js', 'CSS'],
+  },
+];
+
+function Icon({ name }) {
+  const icons = {
+    menu: '☰',
+    close: '×',
+    arrow: '→',
+    home: '⌂',
+    user: '●',
+    school: '🎓',
+    project: '▣',
+    skills: '★',
+    dashboard: '▦',
+    mail: '✉',
+    check: '✓',
+  };
+
+  return <span aria-hidden="true">{icons[name] || '•'}</span>;
+}
+
+function SectionHeading({ title, text }) {
+  return (
+    <div className="section-heading">
+      <h2>{title}</h2>
+      {text && <p>{text}</p>}
+    </div>
+  );
+}
+
+function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    ['Home', 'home'],
+    ['About', 'about'],
+    ['Education', 'education'],
+    ['Projects', 'projects'],
+    ['Skills', 'skills'],
+    ['Dashboard', 'dashboard'],
+    ['Contact', 'contact'],
+  ];
+
+  return (
+    <header className="site-header">
+      <nav className="nav container">
+        <a className="brand" href="#home" onClick={() => setOpen(false)}>
+          Ruby <span>Ann</span>
+        </a>
+
+        <button
+          className="menu-toggle"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <Icon name={open ? 'close' : 'menu'} />
+        </button>
+
+        <div className={`nav-links ${open ? 'open' : ''}`}>
+          {links.map(([label, id]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section id="home" className="hero">
+      <div className="container hero-content">
+        <div className="hero-text">
+          <p className="welcome">WELCOME TO MY PORTFOLIO</p>
+
+          <h1>
+            Hi, I'm <span>Ruby Ann</span>
+          </h1>
+
+          <h3>3rd Year BSIT Student</h3>
+
+          <p className="hero-description">
+            I am an Information Technology student who enjoys learning
+            web development, designing websites, and creating useful
+            technology solutions.
+          </p>
+
+          <div className="hero-buttons">
+            <a href="#projects" className="button primary">
+              View My Projects
+            </a>
+
+            <a href="#about" className="button secondary">
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <div className="profile-area">
+          <div className="profile-circle">
+            <div className="profile-placeholder">
+              <span>RA</span>
+              <p>Your Photo</p>
+            </div>
+          </div>
+
+          <div className="profile-label">
+            <Icon name="check" /> Student Portfolio
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section id="about" className="section">
+      <div className="container">
+        <SectionHeading
+          title="About Me"
+          text="A little introduction about myself and my interests."
+        />
+
+        <div className="about-grid">
+          <div className="about-text">
+            <h3>Hello! I'm Ruby Ann.</h3>
+
+            <p>
+              I am a third-year Bachelor of Science in Information
+              Technology student at Nueva Vizcaya State University.
+            </p>
+
+            <p>
+              I am interested in web development, software development,
+              and UI/UX design. I enjoy learning new technologies and
+              applying them to school projects and practical systems.
+            </p>
+
+            <p>
+              My goal is to continue improving my technical skills and
+              become a capable software developer in the future.
+            </p>
+          </div>
+
+          <div className="about-card">
+            <div className="info-item">
+              <Icon name="user" />
+              <div>
+                <small>Name</small>
+                <strong>Ruby Ann</strong>
+              </div>
+            </div>
+
+            <div className="info-item">
+              <Icon name="school" />
+              <div>
+                <small>Course</small>
+                <strong>BS Information Technology</strong>
+              </div>
+            </div>
+
+            <div className="info-item">
+              <Icon name="project" />
+              <div>
+                <small>Interest</small>
+                <strong>Web & Software Development</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Education() {
+  return (
+    <section id="education" className="section light-section">
+      <div className="container">
+        <SectionHeading
+          title="Education"
+          text="My current academic journey in Information Technology."
+        />
+
+        <div className="education-box">
+          <div className="education-icon">
+            <Icon name="school" />
+          </div>
+
+          <div className="education-content">
+            <span>2023 - Present</span>
+            <h3>Bachelor of Science in Information Technology</h3>
+            <p>Nueva Vizcaya State University</p>
+            <strong>3rd Year Student</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Projects() {
+  return (
+    <section id="projects" className="section">
+      <div className="container">
+        <SectionHeading
+          title="My Projects"
+          text="Some academic and personal projects that represent my learning experience."
+        />
+
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <article className="project-card" key={project.title}>
+              <div className="project-number">
+                0{index + 1}
+              </div>
+
+              <div className="project-icon">
+                <Icon name="project" />
+              </div>
+
+              <h3>{project.title}</h3>
+
+              <p>{project.description}</p>
+
+              <div className="technology-list">
+                {project.technology.map((tech) => (
+                  <span key={tech}>{tech}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Skills() {
+  return (
+    <section id="skills" className="section light-section">
+      <div className="container">
+        <SectionHeading
+          title="My Skills"
+          text="Technologies and skills that I am currently learning and improving."
+        />
+
+        <div className="skills-grid">
+          {skills.map((skill) => (
+            <div className="skill-card" key={skill}>
+              <div className="skill-icon">
+                <Icon name="skills" />
+              </div>
+              <h3>{skill}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Dashboard() {
+  return (
+    <section id="dashboard" className="section">
+      <div className="container">
+        <SectionHeading
+          title="My Dashboard"
+          text="A quick overview of my portfolio and current learning journey."
+        />
+
+        <div className="dashboard-grid">
+          <div className="dashboard-card">
+            <span>Projects</span>
+            <strong>03</strong>
+          </div>
+
+          <div className="dashboard-card">
+            <span>Skills</span>
+            <strong>08</strong>
+          </div>
+
+          <div className="dashboard-card">
+            <span>Year Level</span>
+            <strong>3rd</strong>
+          </div>
+
+          <div className="dashboard-card">
+            <span>Status</span>
+            <strong>Learning</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="section contact-section">
+      <div className="container contact-box">
+        <div>
+          <p className="welcome">GET IN TOUCH</p>
+          <h2>Let's Connect!</h2>
+          <p>
+            Thank you for visiting my portfolio. I am always interested
+            in learning, improving my skills, and connecting with others.
+          </p>
+        </div>
+
+        <div className="contact-info">
+          <p>
+            <Icon name="mail" /> Your Email
+          </p>
+
+          <p>
+            <Icon name="project" /> GitHub
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <div className="container">
+        <strong>Ruby Ann</strong>
+        <p>BSIT Student | Aspiring Software Developer</p>
+        <small>© 2026 Ruby Ann. All rights reserved.</small>
+      </div>
+    </footer>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <About />
+      <Education />
+      <Projects />
+      <Skills />
+      <Dashboard />
+      <Contact />
+      <Footer />
+    </>
+  );
+}
+
+createRoot(document.getElementById('root')).render(<App />);
