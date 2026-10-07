@@ -21,8 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* ================= NAVIGATION ================= */
-
+/* NAVIGATION */
 nav {
     background: white;
     padding: 18px 8%;
@@ -58,15 +57,14 @@ nav ul li a:hover {
     color: #7c3aed;
 }
 
-/* ================= HOME ================= */
-
+/* HOME */
 .home {
     min-height: 90vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 70px 8%;
-    gap: 50px;
+    gap: 40px;
     background: white;
 }
 
@@ -90,7 +88,7 @@ nav ul li a:hover {
     color: #7c3aed;
 }
 
-.home-text p.description {
+.description {
     color: #64748b;
     font-size: 18px;
     max-width: 550px;
@@ -98,7 +96,6 @@ nav ul li a:hover {
 }
 
 /* BUTTONS */
-
 .buttons {
     margin-top: 25px;
 }
@@ -134,8 +131,7 @@ nav ul li a:hover {
     color: white;
 }
 
-/* ================= PROFILE PHOTO ================= */
-
+/* PROFILE PHOTO */
 .home-photo {
     flex: 0.8;
     display: flex;
@@ -144,8 +140,8 @@ nav ul li a:hover {
 }
 
 .profile-photo {
-    width: 330px;
-    height: 400px;
+    width: 300px;
+    height: 380px;
     object-fit: cover;
     object-position: center top;
     border-radius: 25px;
@@ -156,11 +152,9 @@ nav ul li a:hover {
 
 .profile-photo:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(124, 58, 237, 0.35);
 }
 
-/* ================= CODE BOX ================= */
-
+/* CODE BOX */
 .code-box {
     flex: 1;
     background: #111827;
@@ -187,8 +181,7 @@ nav ul li a:hover {
     color: #60a5fa;
 }
 
-/* ================= SECTIONS ================= */
-
+/* SECTIONS */
 section {
     padding: 80px 8%;
 }
@@ -200,8 +193,7 @@ section {
     color: #7c3aed;
 }
 
-/* ================= ABOUT ================= */
-
+/* ABOUT */
 .about {
     background: #f5f7fb;
 }
@@ -232,8 +224,7 @@ section {
     text-align: center;
 }
 
-/* ================= EDUCATION ================= */
-
+/* EDUCATION */
 #education {
     background: white;
 }
@@ -258,8 +249,7 @@ section {
     margin: 7px 0;
 }
 
-/* ================= SKILLS ================= */
-
+/* SKILLS */
 .skills {
     background: #f5f7fb;
 }
@@ -294,8 +284,7 @@ section {
     color: #64748b;
 }
 
-/* ================= PROJECTS ================= */
-
+/* PROJECTS */
 #projects {
     background: white;
 }
@@ -340,8 +329,7 @@ section {
     margin: 3px;
 }
 
-/* ================= CONTACT ================= */
-
+/* CONTACT */
 .contact {
     background: #f5f7fb;
 }
@@ -353,10 +341,6 @@ section {
     padding: 35px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.contact-info {
-    text-align: left;
 }
 
 .contact-info p {
@@ -373,12 +357,7 @@ section {
     text-decoration: none;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer {
     background: #111827;
     color: white;
@@ -400,8 +379,7 @@ footer {
     color: #c084fc;
 }
 
-/* ================= RESPONSIVE ================= */
-
+/* RESPONSIVE */
 @media (max-width: 1000px) {
 
     .home {
@@ -414,14 +392,11 @@ footer {
         flex: 100%;
     }
 
-    .home-text p.description {
-        margin: auto;
+    .description {
+        margin: 15px auto 0;
     }
 
-    .home-photo {
-        flex: 1;
-    }
-
+    .home-photo,
     .code-box {
         flex: 1;
     }
@@ -493,8 +468,7 @@ footer {
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
-
+<!-- NAVIGATION -->
 <nav>
 
     <div class="logo">
@@ -512,9 +486,7 @@ footer {
 
 </nav>
 
-
-<!-- ================= HOME ================= -->
-
+<!-- HOME -->
 <section class="home" id="home">
 
     <div class="home-text">
@@ -547,9 +519,7 @@ footer {
 
     </div>
 
-
     <!-- PROFILE PHOTO -->
-
     <div class="home-photo">
 
         <img
@@ -560,9 +530,7 @@ footer {
 
     </div>
 
-
     <!-- PROGRAMMING CODE -->
-
     <div class="code-box">
 
 <pre><code><span class="code-purple">const</span> developer = {
@@ -590,9 +558,7 @@ footer {
 
 </section>
 
-
-<!-- ================= ABOUT ME ================= -->
-
+<!-- ABOUT ME -->
 <section class="about" id="about">
 
     <h2 class="section-title">
@@ -628,9 +594,7 @@ footer {
 
 </section>
 
-
-<!-- ================= EDUCATION ================= -->
-
+<!-- EDUCATION -->
 <section id="education">
 
     <h2 class="section-title">
@@ -663,9 +627,7 @@ footer {
 
 </section>
 
-
-<!-- ================= TECHNOLOGIES & SKILLS ================= -->
-
+<!-- SKILLS -->
 <section class="skills" id="skills">
 
     <h2 class="section-title">
@@ -708,9 +670,7 @@ footer {
 
 </section>
 
-
-<!-- ================= PROJECTS ================= -->
-
+<!-- PROJECTS -->
 <section id="projects">
 
     <h2 class="section-title">
@@ -739,7 +699,6 @@ footer {
 
         </div>
 
-
         <div class="project-card">
 
             <h3>
@@ -759,7 +718,6 @@ footer {
             </div>
 
         </div>
-
 
         <div class="project-card">
 
@@ -785,9 +743,7 @@ footer {
 
 </section>
 
-
-<!-- ================= CONTACT ME ================= -->
-
+<!-- CONTACT -->
 <section class="contact" id="contact">
 
     <h2 class="section-title">
@@ -821,9 +777,7 @@ footer {
 
 </section>
 
-
-<!-- ================= FOOTER ================= -->
-
+<!-- FOOTER -->
 <footer>
 
     <p>
@@ -847,6 +801,4 @@ footer {
 </footer>
 
 </body>
-</html>
-
-<img src="1000073615.png" alt="Ruby Ann Profile Photo">
+            </html>
