@@ -21,7 +21,8 @@ body {
     line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
+
 nav {
     background: white;
     padding: 18px 8%;
@@ -50,13 +51,15 @@ nav ul li a {
     text-decoration: none;
     color: #1e293b;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav ul li a:hover {
     color: #7c3aed;
 }
 
-/* HOME */
+/* ================= HOME ================= */
+
 .home {
     min-height: 90vh;
     display: flex;
@@ -87,6 +90,15 @@ nav ul li a:hover {
     color: #7c3aed;
 }
 
+.home-text p.description {
+    color: #64748b;
+    font-size: 18px;
+    max-width: 550px;
+    margin-top: 15px;
+}
+
+/* BUTTONS */
+
 .buttons {
     margin-top: 25px;
 }
@@ -98,11 +110,17 @@ nav ul li a:hover {
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .btn {
     background: #7c3aed;
     color: white;
+}
+
+.btn:hover {
+    background: #6d28d9;
+    transform: translateY(-3px);
 }
 
 .btn-light {
@@ -111,7 +129,38 @@ nav ul li a:hover {
     background: white;
 }
 
-/* CODE BOX */
+.btn-light:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+/* ================= PROFILE PHOTO ================= */
+
+.home-photo {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 330px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 25px;
+    border: 6px solid white;
+    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.25);
+    transition: 0.4s;
+}
+
+.profile-photo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(124, 58, 237, 0.35);
+}
+
+/* ================= CODE BOX ================= */
+
 .code-box {
     flex: 1;
     background: #111827;
@@ -138,7 +187,8 @@ nav ul li a:hover {
     color: #60a5fa;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 section {
     padding: 80px 8%;
 }
@@ -150,7 +200,8 @@ section {
     color: #7c3aed;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
+
 .about {
     background: #f5f7fb;
 }
@@ -164,18 +215,15 @@ section {
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-.profile-circle {
-    width: 100px;
-    height: 100px;
-    background: #7c3aed;
-    color: white;
+.about-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
+    display: block;
     margin: 0 auto 25px;
+    border: 5px solid #ede9fe;
 }
 
 .about-content p {
@@ -184,7 +232,8 @@ section {
     text-align: center;
 }
 
-/* EDUCATION */
+/* ================= EDUCATION ================= */
+
 #education {
     background: white;
 }
@@ -209,7 +258,8 @@ section {
     margin: 7px 0;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
+
 .skills {
     background: #f5f7fb;
 }
@@ -244,7 +294,8 @@ section {
     color: #64748b;
 }
 
-/* PROJECTS */
+/* ================= PROJECTS ================= */
+
 #projects {
     background: white;
 }
@@ -289,7 +340,8 @@ section {
     margin: 3px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact {
     background: #f5f7fb;
 }
@@ -316,7 +368,17 @@ section {
     color: #7c3aed;
 }
 
-/* FOOTER */
+.contact-info a {
+    color: #7c3aed;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+
 footer {
     background: #111827;
     color: white;
@@ -338,12 +400,30 @@ footer {
     color: #c084fc;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
 
     .home {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         text-align: center;
+    }
+
+    .home-text {
+        flex: 100%;
+    }
+
+    .home-text p.description {
+        margin: auto;
+    }
+
+    .home-photo {
+        flex: 1;
+    }
+
+    .code-box {
+        flex: 1;
     }
 
     .skill-container,
@@ -352,7 +432,7 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     nav {
         flex-direction: column;
@@ -365,8 +445,18 @@ footer {
         justify-content: center;
     }
 
+    .home {
+        padding: 60px 5%;
+        gap: 30px;
+    }
+
     .home-text h1 {
         font-size: 38px;
+    }
+
+    .profile-photo {
+        width: 280px;
+        height: 350px;
     }
 
     .skill-container,
@@ -378,12 +468,33 @@ footer {
         padding: 60px 5%;
     }
 }
+
+@media (max-width: 450px) {
+
+    .home-text h1 {
+        font-size: 32px;
+    }
+
+    .profile-photo {
+        width: 240px;
+        height: 300px;
+    }
+
+    .code-box {
+        padding: 20px;
+    }
+
+    .code-box pre {
+        font-size: 12px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
 
     <div class="logo">
@@ -402,7 +513,8 @@ footer {
 </nav>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
+
 <section class="home" id="home">
 
     <div class="home-text">
@@ -414,6 +526,12 @@ footer {
         <h1>
             Hello, I'm <span>Ruby Ann</span>
         </h1>
+
+        <p class="description">
+            A 3rd year BS Information Technology student
+            passionate about programming, web development,
+            networking, and creating useful digital solutions.
+        </p>
 
         <div class="buttons">
 
@@ -430,7 +548,21 @@ footer {
     </div>
 
 
+    <!-- PROFILE PHOTO -->
+
+    <div class="home-photo">
+
+        <img
+            src="1000073615.png"
+            alt="Ruby Ann Profile Photo"
+            class="profile-photo"
+        >
+
+    </div>
+
+
     <!-- PROGRAMMING CODE -->
+
     <div class="code-box">
 
 <pre><code><span class="code-purple">const</span> developer = {
@@ -459,7 +591,8 @@ footer {
 </section>
 
 
-<!-- ABOUT ME -->
+<!-- ================= ABOUT ME ================= -->
+
 <section class="about" id="about">
 
     <h2 class="section-title">
@@ -468,9 +601,11 @@ footer {
 
     <div class="about-content">
 
-        <div class="profile-circle">
-            RA
-        </div>
+        <img
+            src="1000073615.png"
+            alt="Ruby Ann"
+            class="about-photo"
+        >
 
         <p>
             I am a Bachelor of Science in Information Technology
@@ -494,7 +629,8 @@ footer {
 </section>
 
 
-<!-- EDUCATION -->
+<!-- ================= EDUCATION ================= -->
+
 <section id="education">
 
     <h2 class="section-title">
@@ -528,7 +664,8 @@ footer {
 </section>
 
 
-<!-- TECHNOLOGIES & SKILLS -->
+<!-- ================= TECHNOLOGIES & SKILLS ================= -->
+
 <section class="skills" id="skills">
 
     <h2 class="section-title">
@@ -572,7 +709,8 @@ footer {
 </section>
 
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
+
 <section id="projects">
 
     <h2 class="section-title">
@@ -648,7 +786,8 @@ footer {
 </section>
 
 
-<!-- CONTACT ME -->
+<!-- ================= CONTACT ME ================= -->
+
 <section class="contact" id="contact">
 
     <h2 class="section-title">
@@ -683,7 +822,8 @@ footer {
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
     <p>
