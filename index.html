@@ -1,456 +1,742 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruby Ann | Programming Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<title>Ruby Ann | Programmer Portfolio</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1e293b;
-            line-height: 1.6;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        /* NAVIGATION */
-        nav {
-            background: white;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1e293b;
+    line-height: 1.6;
+}
 
-        .logo {
-            color: #7c3aed;
-            font-size: 24px;
-            font-weight: bold;
-        }
+/* NAVIGATION */
+nav {
+    background: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7c3aed;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #334155;
-            font-weight: bold;
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
 
-        nav ul li a:hover {
-            color: #7c3aed;
-        }
+nav ul li a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: bold;
+}
 
-        /* HOME */
-        .home {
-            min-height: 90vh;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 70px 8%;
-            gap: 50px;
-            background: white;
-        }
+nav ul li a:hover {
+    color: #7c3aed;
+}
 
-        .home-text {
-            max-width: 600px;
-        }
+/* HOME */
+.home {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 8%;
+    gap: 50px;
+    background: white;
+}
 
-        .welcome {
-            color: #7c3aed;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+.home-text {
+    flex: 1;
+}
 
-        .home h1 {
-            font-size: 55px;
-            margin: 15px 0;
-        }
+.home-text small {
+    color: #7c3aed;
+    font-size: 18px;
+    font-weight: bold;
+}
 
-        .home h1 span {
-            color: #7c3aed;
-        }
+.home-text h1 {
+    font-size: 50px;
+    margin: 10px 0;
+}
 
-        .home h2 {
-            color: #475569;
-            margin-bottom: 20px;
-        }
+.home-text h1 span {
+    color: #7c3aed;
+}
 
-        .buttons {
-            margin-top: 28px;
-        }
+.home-text h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            margin-right: 10px;
-            background: #7c3aed;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+.home-text p {
+    max-width: 600px;
+    margin-bottom: 25px;
+    color: #64748b;
+}
 
-        .btn-light {
-            background: #ede9fe;
-            color: #7c3aed;
-        }
+.buttons a {
+    display: inline-block;
+    padding: 12px 22px;
+    margin-right: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        /* PROGRAMMING CODE */
-        .code-box {
-            background: #111827;
-            color: #d1d5db;
-            padding: 30px;
-            border-radius: 15px;
-            width: 430px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
+.btn-primary {
+    background: #7c3aed;
+    color: white;
+}
 
-        .code-box pre {
-            overflow-x: auto;
-        }
+.btn-secondary {
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
+}
 
-        .code-box code {
-            font-family: Consolas, monospace;
-            line-height: 1.7;
-        }
+/* PROFILE PHOTO */
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
-        .purple {
-            color: #c084fc;
-        }
+.profile-photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid #ede9fe;
+    box-shadow: 0 10px 30px rgba(124,58,237,0.25);
+}
 
-        .blue {
-            color: #60a5fa;
-        }
+/* SECTIONS */
+section {
+    padding: 80px 8%;
+}
 
-        .green {
-            color: #86efac;
-        }
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    color: #7c3aed;
+}
 
-        /* GENERAL */
-        section {
-            padding: 80px 8%;
-        }
+/* ABOUT */
+.about {
+    background: #f5f7fb;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 35px;
-            margin-bottom: 40px;
-            color: #1e293b;
-        }
+.about-box {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
 
-        /* ABOUT */
-        .about {
-            background: #f8fafc;
-        }
+.about-box h3 {
+    color: #7c3aed;
+    margin-bottom: 15px;
+}
 
-        .about-content {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        }
+.about-box p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
 
-        .profile-circle {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: #7c3aed;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 32px;
-            font-weight: bold;
-        }
+/* EDUCATION */
+.education {
+    background: white;
+}
 
-        .about-content h3 {
-            margin-bottom: 15px;
-            color: #7c3aed;
-            font-size: 25px;
-        }
+.education-card {
+    max-width: 800px;
+    margin: auto;
+    background: #f8fafc;
+    padding: 30px;
+    border-left: 6px solid #7c3aed;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
 
-        .about-content p {
-            color: #64748b;
-            line-height: 1.8;
-        }
+.education-card h3 {
+    color: #7c3aed;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
 
-        /* EDUCATION */
-        .education {
-            background: white;
-        }
+.education-card p {
+    margin: 7px 0;
+}
 
-        .education-card {
-            max-width: 800px;
-            margin: auto;
-            background: #f8fafc;
-            padding: 35px;
-            border-left: 6px solid #7c3aed;
-            border-radius: 10px;
-        }
+/* SKILLS */
+.skills {
+    background: #f5f7fb;
+}
 
-        .education-card h3 {
-            color: #7c3aed;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
+.skills-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-        .education-card p {
-            color: #64748b;
-            margin-bottom: 8px;
-        }
+.skill-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
 
-        /* SKILLS */
-        .skills {
-            background: #f8fafc;
-        }
+.skill-card:hover {
+    transform: translateY(-8px);
+}
 
-        .skill-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.skill-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
 
-        .skill-card {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 15px;
-            border: 1px solid #e2e8f0;
-            transition: 0.3s;
-        }
+.skill-card h3 {
+    color: #7c3aed;
+}
 
-        .skill-card:hover {
-            transform: translateY(-7px);
-            border-color: #7c3aed;
-        }
+/* PROJECTS */
+.projects {
+    background: white;
+}
 
-        .skill-logo {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 15px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            font-weight: bold;
-            color: white;
-        }
+.projects-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
 
-        .html {
-            background: #e34f26;
-        }
+.project-card {
+    background: #f8fafc;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
 
-        .css {
-            background: #1572b6;
-        }
+.project-card:hover {
+    transform: translateY(-8px);
+}
 
-        .javascript {
-            background: #f7df1e;
-            color: #111827;
-        }
+.project-image {
+    height: 170px;
+    background: #7c3aed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 60px;
+}
 
-        .github {
-            background: #24292e;
-        }
+.project-content {
+    padding: 22px;
+}
 
-        .network {
-            background: #7c3aed;
-        }
+.project-content h3 {
+    color: #7c3aed;
+    margin-bottom: 10px;
+}
 
-        .ui {
-            background: #ec4899;
-        }
+.project-content p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
 
-        .skill-card h3 {
-            color: #7c3aed;
-            margin-bottom: 8px;
-        }
+.tech {
+    display: inline-block;
+    background: #ede9fe;
+    color: #7c3aed;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    margin: 3px;
+}
 
-        .skill-card p {
-            color: #64748b;
-        }
+/* CONTACT */
+.contact {
+    background: #f5f7fb;
+}
 
-        /* PROJECTS */
-        .projects {
-            background: white;
-        }
+.contact-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
 
-        .project-container {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.contact-info {
+    margin-bottom: 25px;
+}
 
-        .project-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            transition: 0.3s;
-        }
+.contact-info p {
+    margin: 10px 0;
+}
 
-        .project-card:hover {
-            transform: translateY(-7px);
-        }
+.contact-info strong {
+    color: #7c3aed;
+}
 
-        .project-image {
-            height: 170px;
-            background: linear-gradient(135deg, #7c3aed, #a78bfa);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 70px;
-        }
+form input,
+form textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+}
 
-        .project-content {RubyAnn/&gt;
+form textarea {
+    height: 130px;
+    resize: none;
+}
+
+form button {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background: #6d28d9;
+}
+
+/* FOOTER */
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.social {
+    margin-top: 10px;
+}
+
+.social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-text h1 {
+        font-size: 38px;
+    }
+
+    .profile-photo {
+        width: 250px;
+        height: 250px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">&lt;RubyAnn /&gt;</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section class="home" id="home">
+
+    <div class="home-text">
+
+        <small>WELCOME TO MY PORTFOLIO</small>
+
+        <h1>Hello, I'm <span>Ruby Ann</span></h1>
+
+        <h2>3rd Year BSIT Student</h2>
+
+        <p>
+            A passionate Information Technology student interested in
+            programming, web development, networking, and creating useful
+            digital solutions.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-secondary">Contact Me</a>
         </div>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    </div>
 
-    </nav>
+    <div class="profile-container">
+        <!-- Replace profile.jpg with your actual picture -->
+        <img src="profile.jpg" alt="Ruby Ann Profile Picture" class="profile-photo">
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         HOME
-    ========================= -->
+<!-- ABOUT ME -->
+<section class="about" id="about">
 
-    <section class="home" id="home">
+    <h2 class="section-title">About Me</h2>
 
-        <div class="home-text">
+    <div class="about-box">
 
-            <p class="welcome">
-                &lt; PROGRAMMING PROFILE /&gt;
-            </p>
+        <h3>Hi! I'm Ruby Ann.</h3>
 
-            <h1>
-                Hello, I'm <span>Ruby Ann</span>
-            </h1>
+        <p>
+            I am a Bachelor of Science in Information Technology student
+            interested in web development, programming, networking,
+            and creating useful digital solutions.
+        </p>
 
-            <h2>
-                3rd Year BSIT Student
-            </h2>
+        <p>
+            As a 3rd year BSIT student, I continue to improve my skills
+            in different programming technologies and explore how
+            technology can help solve real-world problems.
+        </p>
 
-            <p>
-                I am a Bachelor of Science in Information Technology
-                student interested in web development, programming,
-                networking, and creating useful digital solutions.
-            </p>
+        <p>
+            My goal is to become a skilled IT professional and build
+            useful, user-friendly, and innovative systems.
+        </p>
 
-            <div class="buttons">
+    </div>
 
-                <a href="#projects" class="btn">
-                    View Projects
-                </a>
+</section>
 
-                <a href="#contact" class="btn btn-light">
-                    Contact Me
-                </a>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-card">
+
+        <h3>Bachelor of Science in Information Technology</h3>
+
+        <p><strong>Nueva Vizcaya State University</strong></p>
+
+        <p>Information Technology Program</p>
+
+        <p>Bayombong, Nueva Vizcaya</p>
+
+        <p><strong>3rd Year Student</strong></p>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGIES & SKILLS -->
+<section class="skills" id="skills">
+
+    <h2 class="section-title">Technologies & Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML5</h3>
+            <p>Web Structure</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS3</h3>
+            <p>Web Styling</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>Web Interaction</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">⚛️</div>
+            <h3>React.js</h3>
+            <p>Frontend Development</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🐙</div>
+            <h3>Git & GitHub</h3>
+            <p>Version Control</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>Networking</h3>
+            <p>Network Fundamentals</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+
+            <div class="project-image">
+                📱
+            </div>
+
+            <div class="project-content">
+
+                <h3>QR Code Classroom Attendance</h3>
+
+                <p>
+                    A classroom attendance system that uses QR codes
+                    to record student attendance quickly and efficiently.
+                </p>
+
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
 
             </div>
 
         </div>
 
 
-        <!-- PROGRAMMING PROFILE -->
+        <!-- PROJECT 2 -->
+        <div class="project-card">
 
-        <div class="code-box">
+            <div class="project-image">
+                🎓
+            </div>
 
-<pre><code><span class="code-purple">const</span> developer = {
+            <div class="project-content">
 
-    name: <span class="code-green">"Ruby Ann"</span>,
+                <h3>Online Enrollment System</h3>
 
-    course:
-        <span class="code-green">"BS Information Technology"</span>,
+                <p>
+                    A proposed system that helps students manage
+                    enrollment, clearance, payments, and sectioning online.
+                </p>
 
-    year: <span class="code-blue">"3rd Year"</span>,
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
 
-    skills: [
-        <span class="code-green">"HTML"</span>,
-        <span class="code-green">"CSS"</span>,
-        <span class="code-green">"JavaScript"</span>,
-        <span class="code-green">"Networking"</span>
-    ],
-
-    goal:
-        <span class="code-green">"Build useful systems"</span>
-
-};</code></pre>
+            </div>
 
         </div>
 
-    </section>
 
+        <!-- PROJECT 3 -->
+        <div class="project-card">
 
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
-    <section class="about" id="about">
-
-        <h2 class="section-title">
-            About Me
-        </h2>
-
-        <div class="about-content">
-
-            <div class="profile-circle">
-                RA
+            <div class="project-image">
+                💻
             </div>
 
-            <h3>
-                Hi! I'm Ruby Ann.
-            </h3>
+            <div class="project-content">
+
+                <h3>Student Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website that presents my
+                    profile, education, skills, projects, and contact information.
+                </p>
+
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+        <div class="contact-info">
 
             <p>
-                I am a Bachelor of Science in Information Technology
-                student. I enjoy learning how websites, applications,
-                and computer systems work. My goal is to improve my
-                programming skills and develop simple, practical,
-                and user-friendly applications.
+                <strong>Name:</strong>
+                Ruby Ann D. Ocumen
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                ocumenrubyann02@gmail.com
+            </p>
+
+            <p>
+                <strong>Facebook:</strong>
+                Ruby Ann Duque Ocumen
             </p>
 
         </div>
 
-    </section>
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 
 
-    <!-- =========================
-         EDUCATION
-    ========================= -->
+<!-- FOOTER -->
+<footer>
 
-    <section id="education">
+    <p>
+        © 2026 Ruby Ann | Student Programming Portfolio
+    </p>
+
+    <div class="social">
+        <a href="#contact">Facebook</a>
+        |
+        <a href="mailto:ocumenrubyann02@gmail.com">Email</a>
+    </div>
+
+</footer>
+
+
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your message has been submitted.");
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>ducation">
 
         <h2 class="section-title">
             Education
