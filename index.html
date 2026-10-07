@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ruby Ann | Programmer Portfolio</title>
 
 <style>
@@ -41,18 +40,18 @@ nav {
 }
 
 nav ul {
-    list-style: none;
     display: flex;
+    list-style: none;
     gap: 25px;
 }
 
-nav ul li a {
+nav a {
     text-decoration: none;
     color: #1e293b;
     font-weight: bold;
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: #7c3aed;
 }
 
@@ -60,10 +59,10 @@ nav ul li a:hover {
 .home {
     min-height: 90vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 70px 8%;
+    justify-content: space-between;
     gap: 50px;
+    padding: 70px 8%;
     background: white;
 }
 
@@ -73,21 +72,19 @@ nav ul li a:hover {
 
 .welcome {
     color: #7c3aed;
-    font-size: 18px;
     font-weight: bold;
+    font-size: 18px;
     margin-bottom: 15px;
 }
 
-.home-text h1 {
+.home h1 {
     font-size: 50px;
-    margin-bottom: 20px;
 }
 
-.home-text h1 span {
+.home h1 span {
     color: #7c3aed;
 }
 
-/* BUTTONS */
 .buttons {
     margin-top: 25px;
 }
@@ -95,10 +92,10 @@ nav ul li a:hover {
 .buttons a {
     display: inline-block;
     padding: 12px 22px;
-    margin-right: 10px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .btn {
@@ -109,16 +106,14 @@ nav ul li a:hover {
 .btn-light {
     border: 2px solid #7c3aed;
     color: #7c3aed;
-    background: white;
 }
 
-/* CODE BOX */
+/* CODE */
 .code-box {
     flex: 1;
     background: #111827;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     overflow-x: auto;
 }
 
@@ -127,19 +122,19 @@ nav ul li a:hover {
     font-size: 15px;
 }
 
-.code-purple {
+.purple {
     color: #c084fc;
 }
 
-.code-green {
+.green {
     color: #86efac;
 }
 
-.code-blue {
+.blue {
     color: #60a5fa;
 }
 
-/* SECTIONS */
+/* GENERAL */
 section {
     padding: 80px 8%;
 }
@@ -147,8 +142,8 @@ section {
 .section-title {
     text-align: center;
     font-size: 35px;
-    margin-bottom: 40px;
     color: #7c3aed;
+    margin-bottom: 40px;
 }
 
 /* ABOUT */
@@ -168,46 +163,40 @@ section {
 .profile-circle {
     width: 100px;
     height: 100px;
+    margin: 0 auto 25px;
     background: #7c3aed;
     color: white;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-size: 30px;
     font-weight: bold;
-    margin: 0 auto 25px;
 }
 
 .about-content p {
+    text-align: center;
     color: #64748b;
     margin-bottom: 15px;
-    text-align: center;
 }
 
 /* EDUCATION */
-#education {
+.education {
     background: white;
 }
 
 .education-card {
     max-width: 800px;
     margin: auto;
-    background: #f8fafc;
     padding: 30px;
+    background: #f8fafc;
     border-left: 6px solid #7c3aed;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
 }
 
 .education-card h3 {
     color: #7c3aed;
-    font-size: 23px;
     margin-bottom: 10px;
-}
-
-.education-card p {
-    margin: 7px 0;
 }
 
 /* SKILLS */
@@ -229,11 +218,6 @@ section {
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-8px);
 }
 
 .skill-icon {
@@ -243,7 +227,6 @@ section {
 
 .skill-card h3 {
     color: #7c3aed;
-    margin-bottom: 8px;
 }
 
 .skill-card p {
@@ -251,7 +234,7 @@ section {
 }
 
 /* PROJECTS */
-#projects {
+.projects {
     background: white;
 }
 
@@ -268,16 +251,11 @@ section {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
 }
 
 .project-icon {
-    font-size: 55px;
     text-align: center;
+    font-size: 55px;
     margin-bottom: 20px;
 }
 
@@ -329,10 +307,6 @@ section {
     text-decoration: none;
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
 /* FOOTER */
 footer {
     background: #111827;
@@ -341,23 +315,8 @@ footer {
     padding: 25px;
 }
 
-.social {
-    margin-top: 10px;
-}
-
-.social a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
-}
-
-.social a:hover {
-    color: #c084fc;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 900px) {
-
     .home {
         flex-direction: column;
         text-align: center;
@@ -370,211 +329,13 @@ footer {
 }
 
 @media (max-width: 600px) {
-
     nav {
         flex-direction: column;
         gap: 15px;
     }
 
     nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .home-text h1 {
-        font-size: 38px;
-    }
-
-    .skill-container,
-    .project-container {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 60px 5%;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-<nav>
-    <div class="logo">&lt;RubyAnn /&gt;</div>
-
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<!-- HOME -->
-<section class="home" id="home">
-
-    <div class="home-text">
-
-        <p class="welcome">&lt; PROGRAMMING PROFILE /&gt;</p>
-
-        <h1>
-            Hello, I'm <span>Ruby Ann</span>
-        </h1>
-
-        <div class="buttons">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn btn-light">Contact Me</a>
-        </div>
-
-    </div>
-
-    <div class="code-box">
-
-<pre><code><span class="code-purple">const</span> developer = {
-    name: <span class="code-green">"Ruby Ann"</span>,
-    course: <span class="code-green">"BS Information Technology"</span>,
-    year: <span class="code-blue">"3rd Year"</span>,
-
-    skills: [
-        <span class="code-green">"HTML"</span>,
-        <span class="code-green">"CSS"</span>,
-        <span class="code-green">"JavaScript"</span>,
-        <span class="code-green">"Networking"</span>
-    ],
-
-    goal: <span class="code-green">"Build useful systems"</span>
-};</code></pre>
-
-    </div>
-
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about-content">
-
-        <div class="profile-circle">
-            RA
-        </div>
-
-        <p>
-            I am a Bachelor of Science in Information Technology student
-            interested in web development, programming, networking,
-            and creating useful digital solutions.
-        </p>
-
-        <p>
-            As a 3rd year BSIT student, I continue to improve my skills
-            in different programming technologies and explore how technology
-            can help solve real-world problems.
-        </p>
-
-        <p>
-            My goal is to become a skilled IT professional and build useful,
-            user-friendly, and innovative systems.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-
-    <h2 class="section-title">Education</h2>
-
-    <div class="education-card">
-
-        <h3>
-            Bachelor of Science in Information Technology
-        </h3>
-
-        <p>
-            <strong>Nueva Vizcaya State University</strong>
-        </p>
-
-        <p>
-            Information Technology Program
-        </p>
-
-        <p>
-            Bayombong, Nueva Vizcaya
-        </p>
-
-        <p>
-            <strong>3rd Year Student</strong>
-        </p>
-
-    </div>
-
-</section>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-
-    <h2 class="section-title">
-        Technologies & Skills
-    </h2>
-
-    <div class="skill-container">
-
-        <div class="skill-card">
-            <div class="skill-icon">🌐</div>
-            <h3>HTML5</h3>
-            <p>Web Structure</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">🎨</div>
-            <h3>CSS3</h3>
-            <p>Web Design</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">⚡</div>
-            <h3>JavaScript</h3>
-            <p>Web Interaction</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">⚛️</div>
-            <h3>React.js</h3>
-            <p>Frontend Development</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">🐙</div>
-            <h3>Git / GitHub</h3>
-            <p>Version Control</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">🌐</div>
-            <h3>Networking</h3>
-            <p>Network Fundamentals</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-
-    <h2 class="section-title">
-        My Projects
-    </h2>
-
-    <div class="project-container">
-
-        <div class="project-card">
+        gap: 12px>
 
             <div class="project-icon">📱</div>
 
