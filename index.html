@@ -21,7 +21,8 @@ body {
     line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
+
 nav {
     background: white;
     padding: 18px 8%;
@@ -56,7 +57,8 @@ nav ul li a:hover {
     color: #7c3aed;
 }
 
-/* HOME */
+/* ================= HOME ================= */
+
 .home {
     min-height: 90vh;
     display: flex;
@@ -75,12 +77,12 @@ nav ul li a:hover {
     color: #7c3aed;
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .home-text h1 {
     font-size: 50px;
-    margin: 10px 0;
+    margin-bottom: 20px;
 }
 
 .home-text h1 span {
@@ -111,7 +113,8 @@ nav ul li a:hover {
     background: white;
 }
 
-/* CODE BOX */
+/* ================= CODE BOX ================= */
+
 .code-box {
     flex: 1;
     background: #111827;
@@ -138,7 +141,8 @@ nav ul li a:hover {
     color: #60a5fa;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 section {
     padding: 80px 8%;
 }
@@ -150,7 +154,8 @@ section {
     color: #7c3aed;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
+
 .about {
     background: #f5f7fb;
 }
@@ -184,7 +189,8 @@ section {
     text-align: center;
 }
 
-/* EDUCATION */
+/* ================= EDUCATION ================= */
+
 #education {
     background: white;
 }
@@ -209,7 +215,8 @@ section {
     margin: 7px 0;
 }
 
-/* SKILLS */
+/* ================= SKILLS ================= */
+
 .skills {
     background: #f5f7fb;
 }
@@ -235,6 +242,11 @@ section {
     transform: translateY(-8px);
 }
 
+.skill-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
 .skill-card h3 {
     color: #7c3aed;
     margin-bottom: 8px;
@@ -244,7 +256,8 @@ section {
     color: #64748b;
 }
 
-/* PROJECTS */
+/* ================= PROJECTS ================= */
+
 #projects {
     background: white;
 }
@@ -269,6 +282,12 @@ section {
     transform: translateY(-8px);
 }
 
+.project-icon {
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .project-card h3 {
     color: #7c3aed;
     margin-bottom: 12px;
@@ -289,7 +308,8 @@ section {
     margin: 3px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact {
     background: #f5f7fb;
 }
@@ -303,12 +323,8 @@ section {
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-.contact-info {
-    text-align: left;
-}
-
 .contact-info p {
-    margin: 18px 0;
+    margin: 20px 0;
     font-size: 17px;
 }
 
@@ -316,7 +332,17 @@ section {
     color: #7c3aed;
 }
 
-/* FOOTER */
+.contact-info a {
+    color: #7c3aed;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+
 footer {
     background: #111827;
     color: white;
@@ -338,7 +364,8 @@ footer {
     color: #c084fc;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
 
     .home {
@@ -383,7 +410,8 @@ footer {
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
+
 <nav>
 
     <div class="logo">
@@ -402,7 +430,8 @@ footer {
 </nav>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
+
 <section class="home" id="home">
 
     <div class="home-text">
@@ -430,7 +459,8 @@ footer {
     </div>
 
 
-    <!-- PROGRAMMING CODE -->
+    <!-- PROGRAMMING PROFILE -->
+
     <div class="code-box">
 
 <pre><code><span class="code-purple">const</span> developer = {
@@ -459,7 +489,8 @@ footer {
 </section>
 
 
-<!-- ABOUT ME -->
+<!-- ================= ABOUT ME ================= -->
+
 <section class="about" id="about">
 
     <h2 class="section-title">
@@ -469,7 +500,7 @@ footer {
     <div class="about-content">
 
         <div class="profile-circle">
-            
+            RA
         </div>
 
         <p>
@@ -494,7 +525,8 @@ footer {
 </section>
 
 
-<!-- EDUCATION -->
+<!-- ================= EDUCATION ================= -->
+
 <section id="education">
 
     <h2 class="section-title">
@@ -512,6 +544,10 @@ footer {
         </p>
 
         <p>
+            Information Technology Program
+        </p>
+
+        <p>
             Bayombong, Nueva Vizcaya
         </p>
 
@@ -524,7 +560,8 @@ footer {
 </section>
 
 
-<!-- TECHNOLOGIES & SKILLS -->
+<!-- ================= TECHNOLOGIES & SKILLS ================= -->
+
 <section class="skills" id="skills">
 
     <h2 class="section-title">
@@ -534,32 +571,38 @@ footer {
     <div class="skill-container">
 
         <div class="skill-card">
-            <h3>🌐 HTML5</h3>
+            <div class="skill-icon">🌐</div>
+            <h3>HTML5</h3>
             <p>Web Structure</p>
         </div>
 
         <div class="skill-card">
-            <h3>🎨 CSS3</h3>
+            <div class="skill-icon">🎨</div>
+            <h3>CSS3</h3>
             <p>Web Design</p>
         </div>
 
         <div class="skill-card">
-            <h3>⚡ JavaScript</h3>
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
             <p>Web Interaction</p>
         </div>
 
         <div class="skill-card">
-            <h3>⚛️ React.js</h3>
+            <div class="skill-icon">⚛️</div>
+            <h3>React.js</h3>
             <p>Frontend Development</p>
         </div>
 
         <div class="skill-card">
-            <h3>🐙 Git / GitHub</h3>
+            <div class="skill-icon">🐙</div>
+            <h3>Git / GitHub</h3>
             <p>Version Control</p>
         </div>
 
         <div class="skill-card">
-            <h3>🌐 Networking</h3>
+            <div class="skill-icon">🌐</div>
+            <h3>Networking</h3>
             <p>Network Fundamentals</p>
         </div>
 
@@ -568,7 +611,8 @@ footer {
 </section>
 
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
+
 <section id="projects">
 
     <h2 class="section-title">
@@ -577,10 +621,16 @@ footer {
 
     <div class="project-container">
 
+        <!-- PROJECT 1 -->
+
         <div class="project-card">
 
+            <div class="project-icon">
+                📱
+            </div>
+
             <h3>
-                📱 QR Code Classroom Attendance
+                QR Code Classroom Attendance
             </h3>
 
             <p>
@@ -593,6 +643,131 @@ footer {
                 <span>HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                🎓
+            </div>
+
+            <h3>
+                Online Enrollment System
+            </h3>
+
+            <p>
+                A system concept designed to make student
+                enrollment and clearance verification
+                more convenient.
+            </p>
+
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <div class="project-icon">
+                💻
+            </div>
+
+            <h3>
+                Student Programming Portfolio
+            </h3>
+
+            <p>
+                A personal portfolio website presenting
+                education, skills, projects, and
+                programming interests.
+            </p>
+
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ME ================= -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact Me
+    </h2>
+
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Name:</strong><br>
+                Ruby Ann D. Ocumen
+            </p>
+
+            <p>
+                <strong>Email:</strong><br>
+                <a href="mailto:ocumenrubyann02@gmail.com">
+                    ocumenrubyann02@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Facebook:</strong><br>
+                Ruby Ann Duque Ocumen
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Ruby Ann | Student Programming Portfolio
+    </p>
+
+    <div class="social">
+
+        <a href="mailto:ocumenrubyann02@gmail.com">
+            Email
+        </a>
+
+        |
+
+        <a href="#contact">
+            Facebook
+        </a>
+
+    </div>
+
+</footer>
+
+</body>
+</html>             <span>JavaScript</span>
             </div>
 
         </div>
