@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
 <title>Ruby Ann | Programmer Portfolio</title>
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +22,6 @@ body {
 }
 
 /* NAVIGATION */
-
 nav {
     background: white;
     padding: 18px 8%;
@@ -49,36 +46,23 @@ nav ul {
     gap: 25px;
 }
 
-nav a {
+nav ul li a {
     text-decoration: none;
     color: #1e293b;
     font-weight: bold;
 }
 
-nav a:hover {
+nav ul li a:hover {
     color: #7c3aed;
-}
-
-/* GENERAL */
-
-section {
-    padding: 80px 8%;
-}
-
-.section-title {
-    text-align: center;
-    color: #7c3aed;
-    font-size: 35px;
-    margin-bottom: 40px;
 }
 
 /* HOME */
-
 .home {
     min-height: 90vh;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 70px 8%;
     gap: 50px;
     background: white;
 }
@@ -89,6 +73,7 @@ section {
 
 .home-text small {
     color: #7c3aed;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -102,22 +87,23 @@ section {
 }
 
 .home-text h2 {
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
 .home-text p {
-    color: #64748b;
     max-width: 600px;
     margin-bottom: 25px;
+    color: #64748b;
 }
 
 .buttons a {
     display: inline-block;
-    padding: 12px 20px;
+    padding: 12px 22px;
+    margin-right: 10px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 8px;
 }
 
 .btn-primary {
@@ -130,8 +116,7 @@ section {
     color: #7c3aed;
 }
 
-/* PHOTO */
-
+/* PROFILE PHOTO */
 .profile-container {
     flex: 1;
     display: flex;
@@ -141,14 +126,25 @@ section {
 .profile-photo {
     width: 320px;
     height: 320px;
-    object-fit: cover;
     border-radius: 50%;
+    object-fit: cover;
     border: 10px solid #ede9fe;
     box-shadow: 0 10px 30px rgba(124,58,237,0.25);
 }
 
-/* ABOUT */
+/* SECTIONS */
+section {
+    padding: 80px 8%;
+}
 
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    color: #7c3aed;
+}
+
+/* ABOUT */
 .about {
     background: #f5f7fb;
 }
@@ -173,7 +169,6 @@ section {
 }
 
 /* EDUCATION */
-
 .education {
     background: white;
 }
@@ -190,11 +185,15 @@ section {
 
 .education-card h3 {
     color: #7c3aed;
+    font-size: 23px;
     margin-bottom: 10px;
 }
 
-/* SKILLS */
+.education-card p {
+    margin: 7px 0;
+}
 
+/* SKILLS */
 .skills {
     background: #f5f7fb;
 }
@@ -213,6 +212,11 @@ section {
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
 }
 
 .skill-icon {
@@ -225,7 +229,6 @@ section {
 }
 
 /* PROJECTS */
-
 .projects {
     background: white;
 }
@@ -243,6 +246,11 @@ section {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
 }
 
 .project-image {
@@ -280,7 +288,6 @@ section {
 }
 
 /* CONTACT */
-
 .contact {
     background: #f5f7fb;
 }
@@ -331,13 +338,39 @@ form button {
     font-weight: bold;
 }
 
-/* MOBILE */
+form button:hover {
+    background: #6d28d9;
+}
 
+/* FOOTER */
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.social {
+    margin-top: 10px;
+}
+
+.social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
 
     .home {
         flex-direction: column-reverse;
         text-align: center;
+    }
+
+    .home-text p {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .skills-grid,
@@ -359,7 +392,7 @@ form button {
         justify-content: center;
     }
 
-    .home h1 {
+    .home-text h1 {
         font-size: 38px;
     }
 
@@ -377,19 +410,14 @@ form button {
         padding: 60px 5%;
     }
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
-
 <nav>
-
-    <div class="logo">
-        &lt;RubyAnn /&gt;
-    </div>
+    <div class="logo">&lt;RubyAnn /&gt;</div>
 
     <ul>
         <li><a href="#home">Home</a></li>
@@ -399,21 +427,16 @@ form button {
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-
 </nav>
 
-
 <!-- HOME -->
-
 <section class="home" id="home">
 
     <div class="home-text">
 
         <small>WELCOME TO MY PORTFOLIO</small>
 
-        <h1>
-            Hello, I'm <span>Ruby Ann</span>
-        </h1>
+        <h1>Hello, I'm <span>Ruby Ann</span></h1>
 
         <h2>3rd Year BSIT Student</h2>
 
@@ -424,39 +447,24 @@ form button {
         </p>
 
         <div class="buttons">
-
-            <a href="#projects" class="btn-primary">
-                View Projects
-            </a>
-
-            <a href="#contact" class="btn-secondary">
-                Contact Me
-            </a>
-
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-secondary">Contact Me</a>
         </div>
 
     </div>
 
     <div class="profile-container">
-
-        <img
-            src="profile.jpg"
-            alt="Ruby Ann Profile Picture"
-            class="profile-photo"
-        >
-
+        <!-- Replace profile.jpg with your actual picture -->
+        <img src="profile.jpg" alt="Ruby Ann Profile Picture" class="profile-photo">
     </div>
 
 </section>
 
 
 <!-- ABOUT ME -->
-
 <section class="about" id="about">
 
-    <h2 class="section-title">
-        About Me
-    </h2>
+    <h2 class="section-title">About Me</h2>
 
     <div class="about-box">
 
@@ -485,47 +493,31 @@ form button {
 
 
 <!-- EDUCATION -->
-
 <section class="education" id="education">
 
-    <h2 class="section-title">
-        Education
-    </h2>
+    <h2 class="section-title">Education</h2>
 
     <div class="education-card">
 
-        <h3>
-            Bachelor of Science in Information Technology
-        </h3>
+        <h3>Bachelor of Science in Information Technology</h3>
 
-        <p>
-            <strong>Nueva Vizcaya State University</strong>
-        </p>
+        <p><strong>Nueva Vizcaya State University</strong></p>
 
-        <p>
-            Information Technology Program
-        </p>
+        <p>Information Technology Program</p>
 
-        <p>
-            Bayombong, Nueva Vizcaya
-        </p>
+        <p>Bayombong, Nueva Vizcaya</p>
 
-        <p>
-            <strong>3rd Year Student</strong>
-        </p>
+        <p><strong>3rd Year Student</strong></p>
 
     </div>
 
 </section>
 
 
-<!-- SKILLS -->
-
+<!-- TECHNOLOGIES & SKILLS -->
 <section class="skills" id="skills">
 
-    <h2 class="section-title">
-        Technologies & Skills
-    </h2>
+    <h2 class="section-title">Technologies & Skills</h2>
 
     <div class="skills-grid">
 
@@ -571,15 +563,13 @@ form button {
 
 
 <!-- PROJECTS -->
-
 <section class="projects" id="projects">
 
-    <h2 class="section-title">
-        My Projects
-    </h2>
+    <h2 class="section-title">My Projects</h2>
 
     <div class="projects-grid">
 
+        <!-- PROJECT 1 -->
         <div class="project-card">
 
             <div class="project-image">
@@ -588,9 +578,7 @@ form button {
 
             <div class="project-content">
 
-                <h3>
-                    QR Code Classroom Attendance
-                </h3>
+                <h3>QR Code Classroom Attendance</h3>
 
                 <p>
                     A classroom attendance system that uses QR codes
@@ -598,6 +586,157 @@ form button {
                 </p>
 
                 <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+
+            <div class="project-image">
+                🎓
+            </div>
+
+            <div class="project-content">
+
+                <h3>Online Enrollment System</h3>
+
+                <p>
+                    A proposed system that helps students manage
+                    enrollment, clearance, payments, and sectioning online.
+                </p>
+
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+
+            <div class="project-image">
+                💻
+            </div>
+
+            <div class="project-content">
+
+                <h3>Student Portfolio Website</h3>
+
+                <p>
+                    A personal portfolio website that presents my
+                    profile, education, skills, projects, and contact information.
+                </p>
+
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Name:</strong>
+                Ruby Ann D. Ocumen
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                ocumenrubyann02@gmail.com
+            </p>
+
+            <p>
+                <strong>Facebook:</strong>
+                Ruby Ann Duque Ocumen
+            </p>
+
+        </div>
+
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Ruby Ann | Student Programming Portfolio
+    </p>
+
+    <div class="social">
+        <a href="#contact">Facebook</a>
+        |
+        <a href="mailto:ocumenrubyann02@gmail.com">Email</a>
+    </div>
+
+</footer>
+
+
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your message has been submitted.");
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>pan>
                 <span class="tech">CSS</span>
                 <span class="tech">JavaScript</span>
 
