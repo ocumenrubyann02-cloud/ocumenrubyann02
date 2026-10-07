@@ -7,460 +7,407 @@
 <title>Ruby Ann | Programmer Portfolio</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #1e293b;
-    line-height: 1.6;
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#1e293b;
+    line-height:1.6;
 }
 
 /* NAVIGATION */
-nav {
-    background: white;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+nav{
+    background:white;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #7c3aed;
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#7c3aed;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #1e293b;
-    font-weight: bold;
-    transition: 0.3s;
+nav a{
+    text-decoration:none;
+    color:#1e293b;
+    font-weight:bold;
 }
 
-nav ul li a:hover {
-    color: #7c3aed;
+nav a:hover{
+    color:#7c3aed;
 }
 
 /* HOME */
-.home {
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 70px 8%;
-    gap: 40px;
-    background: white;
+.home{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:45px;
+    padding:70px 8%;
+    background:white;
 }
 
-.home-text {
-    flex: 1;
+.home-text{
+    flex:1;
 }
 
-.welcome {
-    color: #7c3aed;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.welcome{
+    color:#7c3aed;
+    font-weight:bold;
+    font-size:18px;
 }
 
-.home-text h1 {
-    font-size: 50px;
-    margin: 10px 0;
+.home h1{
+    font-size:50px;
+    margin:10px 0;
 }
 
-.home-text h1 span {
-    color: #7c3aed;
+.home h1 span{
+    color:#7c3aed;
 }
 
-.description {
-    color: #64748b;
-    font-size: 18px;
-    max-width: 550px;
-    margin-top: 15px;
+.description{
+    color:#64748b;
+    font-size:18px;
+    max-width:550px;
 }
 
-/* BUTTONS */
-.buttons {
-    margin-top: 25px;
+.buttons{
+    margin-top:25px;
 }
 
-.buttons a {
-    display: inline-block;
-    padding: 12px 22px;
-    margin-right: 10px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.buttons a{
+    display:inline-block;
+    padding:12px 22px;
+    margin-right:10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.btn {
-    background: #7c3aed;
-    color: white;
+.btn{
+    background:#7c3aed;
+    color:white;
 }
 
-.btn:hover {
-    background: #6d28d9;
-    transform: translateY(-3px);
+.btn:hover{
+    background:#6d28d9;
+    transform:translateY(-3px);
 }
 
-.btn-light {
-    border: 2px solid #7c3aed;
-    color: #7c3aed;
-    background: white;
+.btn-light{
+    border:2px solid #7c3aed;
+    color:#7c3aed;
 }
 
-.btn-light:hover {
-    background: #7c3aed;
-    color: white;
+.btn-light:hover{
+    background:#7c3aed;
+    color:white;
 }
 
-/* PROFILE PHOTO */
-.home-photo {
-    flex: 0.8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* PICTURE */
+.home-photo{
+    flex:1;
+    display:flex;
+    justify-content:center;
 }
 
-.profile-photo {
-    width: 300px;
-    height: 380px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 25px;
-    border: 6px solid white;
-    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.25);
-    transition: 0.4s;
+.profile-photo{
+    width:300px;
+    height:380px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:25px;
+    border:6px solid white;
+    box-shadow:0 15px 40px rgba(124,58,237,.25);
+    transition:.4s;
 }
 
-.profile-photo:hover {
-    transform: translateY(-8px);
+.profile-photo:hover{
+    transform:translateY(-8px);
 }
 
-/* CODE BOX */
-.code-box {
-    flex: 1;
-    background: #111827;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    overflow-x: auto;
+/* CODE */
+.code-box{
+    flex:1;
+    background:#111827;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    overflow-x:auto;
 }
 
-.code-box pre {
-    color: #e5e7eb;
-    font-size: 15px;
+.code-box pre{
+    color:#e5e7eb;
+    font-size:15px;
 }
 
-.code-purple {
-    color: #c084fc;
-}
-
-.code-green {
-    color: #86efac;
-}
-
-.code-blue {
-    color: #60a5fa;
-}
+.code-purple{color:#c084fc;}
+.code-green{color:#86efac;}
+.code-blue{color:#60a5fa;}
 
 /* SECTIONS */
-section {
-    padding: 80px 8%;
+section{
+    padding:80px 8%;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
-    color: #7c3aed;
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+    color:#7c3aed;
 }
 
 /* ABOUT */
-.about {
-    background: #f5f7fb;
+.about{
+    background:#f5f7fb;
 }
 
-.about-content {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.about-content{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.about-photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 25px;
-    border: 5px solid #ede9fe;
+.about-photo{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:50%;
+    display:block;
+    margin:0 auto 25px;
+    border:5px solid #ede9fe;
 }
 
-.about-content p {
-    color: #64748b;
-    margin-bottom: 15px;
-    text-align: center;
+.about-content p{
+    color:#64748b;
+    margin-bottom:15px;
+    text-align:center;
 }
 
 /* EDUCATION */
-#education {
-    background: white;
+#education{
+    background:white;
 }
 
-.education-card {
-    max-width: 800px;
-    margin: auto;
-    background: #f8fafc;
-    padding: 30px;
-    border-left: 6px solid #7c3aed;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+.education-card{
+    max-width:800px;
+    margin:auto;
+    background:#f8fafc;
+    padding:30px;
+    border-left:6px solid #7c3aed;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
 }
 
-.education-card h3 {
-    color: #7c3aed;
-    font-size: 23px;
-    margin-bottom: 10px;
-}
-
-.education-card p {
-    margin: 7px 0;
+.education-card h3{
+    color:#7c3aed;
+    font-size:23px;
+    margin-bottom:10px;
 }
 
 /* SKILLS */
-.skills {
-    background: #f5f7fb;
+.skills{
+    background:#f5f7fb;
 }
 
-.skill-container {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.skill-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.skill-card {
-    background: white;
-    padding: 30px 20px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
-    transition: 0.3s;
+.skill-card{
+    background:white;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+    transition:.3s;
 }
 
-.skill-card:hover {
-    transform: translateY(-8px);
+.skill-card:hover{
+    transform:translateY(-8px);
 }
 
-.skill-card h3 {
-    color: #7c3aed;
-    margin-bottom: 8px;
+.skill-card h3{
+    color:#7c3aed;
+    margin-bottom:8px;
 }
 
-.skill-card p {
-    color: #64748b;
+.skill-card p{
+    color:#64748b;
 }
 
 /* PROJECTS */
-#projects {
-    background: white;
+#projects{
+    background:white;
 }
 
-.project-container {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+.project-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.project-card {
-    background: #f8fafc;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
+.project-card{
+    background:#f8fafc;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
-.project-card:hover {
-    transform: translateY(-8px);
+.project-card:hover{
+    transform:translateY(-8px);
 }
 
-.project-card h3 {
-    color: #7c3aed;
-    margin-bottom: 12px;
+.project-card h3{
+    color:#7c3aed;
+    margin-bottom:12px;
 }
 
-.project-card p {
-    color: #64748b;
-    margin-bottom: 15px;
+.project-card p{
+    color:#64748b;
+    margin-bottom:15px;
 }
 
-.technology span {
-    display: inline-block;
-    background: #ede9fe;
-    color: #7c3aed;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 13px;
-    margin: 3px;
+.technology span{
+    display:inline-block;
+    background:#ede9fe;
+    color:#7c3aed;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:13px;
+    margin:3px;
 }
 
 /* CONTACT */
-.contact {
-    background: #f5f7fb;
+.contact{
+    background:#f5f7fb;
 }
 
-.contact-box {
-    max-width: 700px;
-    margin: auto;
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.contact-info p {
-    margin: 18px 0;
-    font-size: 17px;
+.contact-info p{
+    margin:18px 0;
+    font-size:17px;
 }
 
-.contact-info strong {
-    color: #7c3aed;
+.contact-info strong{
+    color:#7c3aed;
 }
 
-.contact-info a {
-    color: #7c3aed;
-    text-decoration: none;
+.contact-info a{
+    color:#7c3aed;
+    text-decoration:none;
 }
 
 /* FOOTER */
-footer {
-    background: #111827;
-    color: white;
-    text-align: center;
-    padding: 25px;
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 
-.social {
-    margin-top: 10px;
+.social{
+    margin-top:10px;
 }
 
-.social a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
 }
 
-.social a:hover {
-    color: #c084fc;
-}
+/* MOBILE */
+@media(max-width:1000px){
 
-/* RESPONSIVE */
-@media (max-width: 1000px) {
-
-    .home {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
+    .home{
+        flex-wrap:wrap;
+        text-align:center;
     }
 
-    .home-text {
-        flex: 100%;
+    .home-text{
+        flex:100%;
     }
 
-    .description {
-        margin: 15px auto 0;
-    }
-
-    .home-photo,
-    .code-box {
-        flex: 1;
+    .description{
+        margin:auto;
     }
 
     .skill-container,
-    .project-container {
-        grid-template-columns: repeat(2, 1fr);
+    .project-container{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
-@media (max-width: 700px) {
+@media(max-width:700px){
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
+    nav{
+        flex-direction:column;
+        gap:15px;
     }
 
-    nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+    nav ul{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
-    .home {
-        padding: 60px 5%;
-        gap: 30px;
+    .home h1{
+        font-size:38px;
     }
 
-    .home-text h1 {
-        font-size: 38px;
-    }
-
-    .profile-photo {
-        width: 280px;
-        height: 350px;
+    .profile-photo{
+        width:270px;
+        height:340px;
     }
 
     .skill-container,
-    .project-container {
-        grid-template-columns: 1fr;
+    .project-container{
+        grid-template-columns:1fr;
     }
 
-    section {
-        padding: 60px 5%;
-    }
-}
-
-@media (max-width: 450px) {
-
-    .home-text h1 {
-        font-size: 32px;
-    }
-
-    .profile-photo {
-        width: 240px;
-        height: 300px;
-    }
-
-    .code-box {
-        padding: 20px;
-    }
-
-    .code-box pre {
-        font-size: 12px;
+    section{
+        padding:60px 5%;
     }
 }
 </style>
@@ -470,10 +417,7 @@ footer {
 
 <!-- NAVIGATION -->
 <nav>
-
-    <div class="logo">
-        &lt;RubyAnn /&gt;
-    </div>
+    <div class="logo">&lt;RubyAnn /&gt;</div>
 
     <ul>
         <li><a href="#home">Home</a></li>
@@ -483,8 +427,8 @@ footer {
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-
 </nav>
+
 
 <!-- HOME -->
 <section class="home" id="home">
@@ -519,16 +463,18 @@ footer {
 
     </div>
 
-    <!-- PROFILE PHOTO -->
+
+    <!-- PICTURE -->
     <div class="home-photo">
 
         <img
-            src="1000073615.png"
-            alt="Ruby Ann Profile Photo"
+            src="data:image/jpeg;base64,PASTE_IMAGE_CODE_HERE"
+            alt="Ruby Ann"
             class="profile-photo"
         >
 
     </div>
+
 
     <!-- PROGRAMMING CODE -->
     <div class="code-box">
@@ -558,20 +504,13 @@ footer {
 
 </section>
 
-<!-- ABOUT ME -->
+
+<!-- ABOUT -->
 <section class="about" id="about">
 
-    <h2 class="section-title">
-        About Me
-    </h2>
+    <h2 class="section-title">About Me</h2>
 
     <div class="about-content">
-
-        <img
-            src="1000073615.png"
-            alt="Ruby Ann"
-            class="about-photo"
-        >
 
         <p>
             I am a Bachelor of Science in Information Technology
@@ -594,12 +533,11 @@ footer {
 
 </section>
 
+
 <!-- EDUCATION -->
 <section id="education">
 
-    <h2 class="section-title">
-        Education
-    </h2>
+    <h2 class="section-title">Education</h2>
 
     <div class="education-card">
 
@@ -611,13 +549,9 @@ footer {
             <strong>Nueva Vizcaya State University</strong>
         </p>
 
-        <p>
-            Information Technology Program
-        </p>
+        <p>Information Technology Program</p>
 
-        <p>
-            Bayombong, Nueva Vizcaya
-        </p>
+        <p>Bayombong, Nueva Vizcaya</p>
 
         <p>
             <strong>3rd Year Student</strong>
@@ -626,6 +560,7 @@ footer {
     </div>
 
 </section>
+
 
 <!-- SKILLS -->
 <section class="skills" id="skills">
@@ -670,20 +605,17 @@ footer {
 
 </section>
 
+
 <!-- PROJECTS -->
 <section id="projects">
 
-    <h2 class="section-title">
-        My Projects
-    </h2>
+    <h2 class="section-title">My Projects</h2>
 
     <div class="project-container">
 
         <div class="project-card">
 
-            <h3>
-                📱 QR Code Classroom Attendance
-            </h3>
+            <h3>📱 QR Code Classroom Attendance</h3>
 
             <p>
                 A classroom attendance system concept using
@@ -699,11 +631,10 @@ footer {
 
         </div>
 
+
         <div class="project-card">
 
-            <h3>
-                🎓 Online Enrollment System
-            </h3>
+            <h3>🎓 Online Enrollment System</h3>
 
             <p>
                 A system concept designed to make student
@@ -719,11 +650,10 @@ footer {
 
         </div>
 
+
         <div class="project-card">
 
-            <h3>
-                💻 Student Programming Portfolio
-            </h3>
+            <h3>💻 Student Programming Portfolio</h3>
 
             <p>
                 A personal portfolio website presenting
@@ -742,6 +672,7 @@ footer {
     </div>
 
 </section>
+
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -777,6 +708,7 @@ footer {
 
 </section>
 
+
 <!-- FOOTER -->
 <footer>
 
@@ -801,4 +733,4 @@ footer {
 </footer>
 
 </body>
-            </html>
+</html>
