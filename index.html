@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ruby Ann | Programmer Portfolio</title>
+    <title>Ruby Ann | Programming Profile</title>
 
     <style>
         * {
@@ -18,14 +18,15 @@
             font-family: Arial, sans-serif;
             background: #f5f7fb;
             color: #1e293b;
-            line-height: 1.6;
         }
 
-        /* ================= NAVIGATION ================= */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
-            background: white;
-            padding: 18px 8%;
+            background: #ffffff;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -36,111 +37,143 @@
         }
 
         .logo {
+            color: #7c3aed;
             font-size: 24px;
             font-weight: bold;
-            color: #7c3aed;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
+            display: flex;
             gap: 25px;
         }
 
-        nav a {
+        nav ul li a {
             text-decoration: none;
-            color: #1e293b;
+            color: #334155;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: #7c3aed;
         }
 
-        /* ================= HOME ================= */
+        /* =========================
+           HOME
+        ========================= */
 
         .home {
             min-height: 90vh;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 50px;
+            align-items: center;
             padding: 70px 8%;
-            background: white;
+            gap: 50px;
+            background: #ffffff;
         }
 
         .home-text {
-            flex: 1;
+            max-width: 600px;
         }
 
         .welcome {
             color: #7c3aed;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: bold;
-            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
 
-        .home h1 {
-            font-size: 50px;
+        .home-text h1 {
+            font-size: 55px;
+            margin: 15px 0;
+            color: #222;
         }
 
-        .home h1 span {
+        .home-text h1 span {
             color: #7c3aed;
+        }
+
+        .home-text h2 {
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .home-text p {
+            color: #64748b;
+            line-height: 1.8;
         }
 
         .buttons {
-            margin-top: 25px;
-        }
-
-        .buttons a {
-            display: inline-block;
-            padding: 12px 22px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 10px;
+            margin-top: 28px;
         }
 
         .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            margin-right: 10px;
             background: #7c3aed;
             color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
         }
 
         .btn-light {
-            border: 2px solid #7c3aed;
+            background: #ede9fe;
             color: #7c3aed;
-            background: white;
         }
 
-        /* ================= CODE BOX ================= */
+        .btn-light:hover {
+            background: #ddd6fe;
+        }
+
+        /* =========================
+           PROGRAMMING CODE BOX
+        ========================= */
 
         .code-box {
-            flex: 1;
             background: #111827;
+            color: #d1d5db;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            overflow-x: auto;
+            width: 430px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border: 1px solid #374151;
         }
 
         .code-box pre {
-            color: #e5e7eb;
-            font-size: 15px;
+            overflow-x: auto;
         }
 
-        .purple {
+        .code-box code {
+            font-family: Consolas, monospace;
+            line-height: 1.7;
+        }
+
+        .code-purple {
             color: #c084fc;
         }
 
-        .green {
-            color: #86efac;
-        }
-
-        .blue {
+        .code-blue {
             color: #60a5fa;
         }
 
-        /* ================= GENERAL ================= */
+        .code-green {
+            color: #86efac;
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
             padding: 80px 8%;
@@ -149,32 +182,31 @@
         .section-title {
             text-align: center;
             font-size: 35px;
-            color: #7c3aed;
             margin-bottom: 40px;
+            color: #1e293b;
         }
 
-        /* ================= ABOUT ================= */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
-            background: #f5f7fb;
+            background: #ffffff;
         }
 
         .about-content {
             max-width: 900px;
             margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
         }
 
         .profile-circle {
             width: 100px;
             height: 100px;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
             background: #7c3aed;
             color: white;
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -182,42 +214,46 @@
             font-weight: bold;
         }
 
+        .about-content h3 {
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
         .about-content p {
-            text-align: center;
+            line-height: 1.8;
             color: #64748b;
-            margin-bottom: 15px;
         }
 
-        /* ================= EDUCATION ================= */
-
-        .education {
-            background: white;
-        }
+        /* =========================
+           EDUCATION
+        ========================= */
 
         .education-card {
             max-width: 800px;
             margin: auto;
+            background: white;
             padding: 30px;
-            background: #f8fafc;
-            border-left: 6px solid #7c3aed;
+            border-left: 5px solid #7c3aed;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
         }
 
         .education-card h3 {
             color: #7c3aed;
-            font-size: 23px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .education-card p {
-            margin: 7px 0;
+            color: #64748b;
+            margin-bottom: 8px;
         }
 
-        /* ================= SKILLS ================= */
+        /* =========================
+           SKILLS
+        ========================= */
 
         .skills {
-            background: #f5f7fb;
+            background: #ffffff;
         }
 
         .skill-container {
@@ -229,21 +265,18 @@
         }
 
         .skill-card {
-            background: white;
-            padding: 30px 20px;
+            background: #f8fafc;
+            padding: 25px;
             text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
             transition: 0.3s;
         }
 
         .skill-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .skill-icon {
-            font-size: 45px;
-            margin-bottom: 10px;
+            transform: translateY(-5px);
+            border-color: #7c3aed;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.12);
         }
 
         .skill-card h3 {
@@ -255,36 +288,28 @@
             color: #64748b;
         }
 
-        /* ================= PROJECTS ================= */
-
-        .projects {
-            background: white;
-        }
+        /* =========================
+           PROJECTS
+        ========================= */
 
         .project-container {
             max-width: 1100px;
             margin: auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 20px;
         }
 
         .project-card {
-            background: #f8fafc;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
             transition: 0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .project-icon {
-            text-align: center;
-            font-size: 55px;
-            margin-bottom: 20px;
+            transform: translateY(-5px);
         }
 
         .project-card h3 {
@@ -294,53 +319,69 @@
 
         .project-card p {
             color: #64748b;
-            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .technology {
+            margin-top: 15px;
         }
 
         .technology span {
             display: inline-block;
             background: #ede9fe;
             color: #7c3aed;
-            padding: 5px 10px;
+            padding: 5px 9px;
             border-radius: 5px;
-            font-size: 13px;
             margin: 3px;
+            font-size: 12px;
         }
 
-        /* ================= CONTACT ================= */
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
-            background: #f5f7fb;
+            background: #ffffff;
         }
 
-        .contact-box {
-            max-width: 700px;
+        .contact-form {
+            max-width: 600px;
             margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .contact-info p {
-            margin: 20px 0;
-            font-size: 17px;
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            outline: none;
         }
 
-        .contact-info strong {
-            color: #7c3aed;
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #7c3aed;
         }
 
-        .contact-info a {
-            color: #7c3aed;
-            text-decoration: none;
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            color: #16a34a;
+            font-weight: bold;
+            text-align: center;
         }
 
-        /* ================= FOOTER ================= */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #111827;
@@ -349,21 +390,9 @@
             padding: 25px;
         }
 
-        .social {
-            margin-top: 10px;
-        }
-
-        .social a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-        }
-
-        .social a:hover {
-            color: #c084fc;
-        }
-
-        /* ================= MOBILE ================= */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 900px) {
 
@@ -372,13 +401,18 @@
                 text-align: center;
             }
 
+            .code-box {
+                width: 100%;
+                max-width: 500px;
+            }
+
             .skill-container,
             .project-container {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
 
             nav {
                 flex-direction: column;
@@ -386,9 +420,343 @@
             }
 
             nav ul {
-                gap: 12px;
                 flex-wrap: wrap;
-                justify-content               type="email"
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .home {
+                padding: 60px 6%;
+            }
+
+            .home-text h1 {
+                font-size: 40px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .btn {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            &lt;RubyAnn/&gt;
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section class="home" id="home">
+
+        <div class="home-text">
+
+            <p class="welcome">
+                &lt; PROGRAMMING PROFILE /&gt;
+            </p>
+
+            <h1>
+                Hello, I'm <span>Ruby Ann</span>
+            </h1>
+
+            <h2>
+                3rd Year BSIT Student
+            </h2>
+
+            <p>
+                I am a Bachelor of Science in Information Technology
+                student interested in web development, programming,
+                networking, and creating useful digital solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn btn-light">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROGRAMMING PROFILE -->
+
+        <div class="code-box">
+
+<pre><code><span class="code-purple">const</span> developer = {
+
+    name: <span class="code-green">"Ruby Ann"</span>,
+
+    course:
+        <span class="code-green">"BS Information Technology"</span>,
+
+    year: <span class="code-blue">"3rd Year"</span>,
+
+    skills: [
+        <span class="code-green">"HTML"</span>,
+        <span class="code-green">"CSS"</span>,
+        <span class="code-green">"JavaScript"</span>,
+        <span class="code-green">"Networking"</span>
+    ],
+
+    goal:
+        <span class="code-green">"Build useful systems"</span>
+
+};</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <div class="about-content">
+
+            <div class="profile-circle">
+                RA
+            </div>
+
+            <h3>
+                Hi! I'm Ruby Ann.
+            </h3>
+
+            <p>
+                I am a Bachelor of Science in Information Technology
+                student. I enjoy learning how websites, applications,
+                and computer systems work. My goal is to improve my
+                programming skills and develop simple, practical,
+                and user-friendly applications.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Science in Information Technology
+            </h3>
+
+            <p>
+                Nueva Vizcaya State University
+            </p>
+
+            <p>
+                Information Technology Program
+            </p>
+
+            <p>
+                3rd Year Student
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">
+            Technologies & Skills
+        </h2>
+
+        <div class="skill-container">
+
+            <div class="skill-card">
+                <h3>HTML5</h3>
+                <p>Web Structure</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS3</h3>
+                <p>Web Design</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Web Interaction</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Git / GitHub</h3>
+                <p>Version Control</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Networking</h3>
+                <p>Network Fundamentals</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>UI Design</h3>
+                <p>User Interface</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My Projects
+        </h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <h3>
+                    QR Code Classroom Attendance
+                </h3>
+
+                <p>
+                    A classroom attendance system concept using
+                    QR codes for faster attendance recording
+                    and monitoring.
+                </p>
+
+                <div class="technology">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Online Enrollment System
+                </h3>
+
+                <p>
+                    A system concept designed to make student
+                    enrollment and clearance verification
+                    more convenient.
+                </p>
+
+                <div class="technology">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>
+                    Student Programming Portfolio
+                </h3>
+
+                <p>
+                    A personal portfolio website presenting
+                    education, skills, projects, and
+                    programming interests.
+                </p>
+
+                <div class="technology">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <form
+            class="contact-form"
+            onsubmit="sendMessage(event)"
+        >
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
                 placeholder="Your Email"
                 required
             >
@@ -398,72 +766,59 @@
                 required
             ></textarea>
 
-            <button type="submit">
+            <button
+                type="submit"
+                class="btn"
+            >
                 Send Message
             </button>
 
+            <p
+                id="successMessage"
+                class="success-message"
+            >
+                Thank you! Your message has been received.
+            </p>
+
         </form>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- FOOTER -->
-<footer>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-    <p>
-        © 2026 Ruby Ann | Student Programming Portfolio
-    </p>
+    <footer>
 
-    <div class="social">
-        <a href="#contact">Facebook</a>
-        |
-        <a href="mailto:ocumenrubyann02@gmail.com">Email</a>
-    </div>
+        <p>
+            © 2026 Ruby Ann | Student Programming Portfolio
+        </p>
 
-</footer>
+    </footer>
 
 
-<script>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
+    <script>
 
-    event.preventDefault();
+        function sendMessage(event) {
 
-    alert("Thank you! Your message has been submitted.");
+            event.preventDefault();
 
-    this.reset();
+            document.getElementById("successMessage")
+                .style.display = "block";
 
-});
+            event.target.reset();
 
-</script>
+        }
+
+    </script>
 
 </body>
-</html>>⚡</div>
-            <h3>JavaScript</h3>
-            <p>Web Interaction</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">⚛️</div>
-            <h3>React.js</h3>
-            <p>Frontend Development</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">🐙</div>
-            <h3>Git / GitHub</h3>
-            <p>Version Control</p>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">🌐</div>
-            <h3>Networking</h3>
-            <p>Network Fundamentals</p>
-        </div>
-
-    </div>
+</html>  </div>
 
 </section>
 
