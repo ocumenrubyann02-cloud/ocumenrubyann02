@@ -1,865 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ruby Ann | Programmer Portfolio</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-        /* NAVBAR */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255,255,255,0.95);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        }
-
-        nav {
-            max-width: 1100px;
-            margin: auto;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #7c3aed;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #374151;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #7c3aed;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 25px 60px;
-            background: linear-gradient(135deg, #f5f3ff, #ffffff);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: rgba(124, 58, 237, 0.12);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero::before {
-            top: 80px;
-            left: -100px;
-        }
-
-        .hero::after {
-            right: -100px;
-            bottom: 50px;
-            animation-delay: 2s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-30px);
-            }
-        }
-
-        .hero-container {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-size: 55px;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-
-        .hero-text h1 span {
-            color: #7c3aed;
-        }
-
-        .hero-text h2 {
-            font-size: 25px;
-            color: #4b5563;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            margin-bottom: 25px;
-            color: #6b7280;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #7c3aed;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-            margin-right: 10px;
-        }
-
-        .btn:hover {
-            background: #5b21b6;
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #7c3aed;
-            border: 2px solid #7c3aed;
-        }
-
-        .btn-outline:hover {
-            background: #7c3aed;
-            color: white;
-        }
-
-        /* PROFILE IMAGE */
-        .profile-container {
-            text-align: center;
-        }
-
-        .profile-photo {
-            width: 330px;
-            height: 330px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 8px solid white;
-            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.25);
-            animation: profileFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes profileFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        /* GENERAL SECTION */
-        section {
-            padding: 90px 25px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 50px;
-            color: #111827;
-        }
-
-        .section-title span {
-            color: #7c3aed;
-        }
-
-        /* ABOUT */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #111827;
-        }
-
-        .about-text p {
-            color: #6b7280;
-            margin-bottom: 15px;
-        }
-
-        .info-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-        }
-
-        .info-box p {
-            margin-bottom: 12px;
-        }
-
-        .info-box strong {
-            color: #7c3aed;
-        }
-
-        /* SKILLS */
-        .skills {
-            background: #ffffff;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: #f9fafb;
-            padding: 30px;
-            text-align: center;
-            border-radius: 15px;
-            border: 1px solid #e5e7eb;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(124,58,237,0.15);
-            border-color: #c4b5fd;
-        }
-
-        .skill-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 8px;
-            color: #111827;
-        }
-
-        .skill-card p {
-            color: #6b7280;
-        }
-
-        /* EDUCATION */
-        .education-card {
-            background: white;
-            padding: 35px;
-            border-left: 6px solid #7c3aed;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-        }
-
-        .education-card h3 {
-            color: #7c3aed;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .education-card h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .education-card p {
-            color: #6b7280;
-            margin-bottom: 6px;
-        }
-
-        /* PROJECTS */
-        .projects {
-            background: #ffffff;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project-card {
-            background: #f9fafb;
-            border-radius: 15px;
-            padding: 30px;
-            border: 1px solid #e5e7eb;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-        }
-
-        .project-card .number {
-            font-size: 35px;
-            font-weight: bold;
-            color: #7c3aed;
-            margin-bottom: 10px;
-        }
-
-        .project-card h3 {
-            margin-bottom: 12px;
-            color: #111827;
-        }
-
-        .project-card p {
-            color: #6b7280;
-        }
-
-        /* CODE BOX */
-        .code-section {
-            background: #111827;
-        }
-
-        .code-section .section-title {
-            color: white;
-        }
-
-        .code-box {
-            background: #020617;
-            color: #d1d5db;
-            padding: 30px;
-            border-radius: 15px;
-            overflow-x: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        }
-
-        .code-box pre {
-            font-family: Consolas, monospace;
-            font-size: 15px;
-            line-height: 1.8;
-        }
-
-        .purple {
-            color: #c084fc;
-        }
-
-        .green {
-            color: #86efac;
-        }
-
-        .blue {
-            color: #93c5fd;
-        }
-
-        /* CONTACT */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-        }
-
-        .contact-card h3 {
-            font-size: 25px;
-            margin-bottom: 20px;
-            color: #111827;
-        }
-
-        .contact-item {
-            margin-bottom: 18px;
-        }
-
-        .contact-item strong {
-            color: #7c3aed;
-        }
-
-        .contact-item a {
-            color: #4b5563;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: #7c3aed;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        footer span {
-            color: #a78bfa;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav ul {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-container,
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 42px;
-            }
-
-            .profile-photo {
-                width: 250px;
-                height: 250px;
-            }
-
-            .skills-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-box {
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            section {
-                padding: 70px 18px;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-
-            .hero-text h1 {
-                font-size: 36px;
-            }
-
-            .hero-text h2 {
-                font-size: 20px;
-            }
-
-            .btn {
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ruby Ann | Programmer Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#1e293b;
+    line-height:1.6;
+}
+
+/* NAVIGATION */
+nav{
+    background:white;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#7c3aed;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1e293b;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#7c3aed;
+}
+
+/* HOME */
+.home{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:45px;
+    padding:70px 8%;
+    background:white;
+}
+
+.home-text{
+    flex:1;
+}
+
+.welcome{
+    color:#7c3aed;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.home h1{
+    font-size:50px;
+    margin:10px 0;
+}
+
+.home h1 span{
+    color:#7c3aed;
+}
+
+.description{
+    color:#64748b;
+    font-size:18px;
+    max-width:550px;
+}
+
+.buttons{
+    margin-top:25px;
+}
+
+.buttons a{
+    display:inline-block;
+    padding:12px 22px;
+    margin-right:10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn{
+    background:#7c3aed;
+    color:white;
+}
+
+.btn:hover{
+    background:#6d28d9;
+    transform:translateY(-3px);
+}
+
+.btn-light{
+    border:2px solid #7c3aed;
+    color:#7c3aed;
+}
+
+.btn-light:hover{
+    background:#7c3aed;
+    color:white;
+}
+
+/* PICTURE */
+.home-photo{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.profile-photo{
+    width:300px;
+    height:380px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:25px;
+    border:6px solid white;
+    box-shadow:0 15px 40px rgba(124,58,237,.25);
+    transition:.4s;
+}
+
+.profile-photo:hover{
+    transform:translateY(-8px);
+}
+
+/* CODE */
+.code-box{
+    flex:1;
+    background:#111827;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    overflow-x:auto;
+}
+
+.code-box pre{
+    color:#e5e7eb;
+    font-size:15px;
+}
+
+.code-purple{color:#c084fc;}
+.code-green{color:#86efac;}
+.code-blue{color:#60a5fa;}
+
+/* SECTIONS */
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+    color:#7c3aed;
+}
+
+/* ABOUT */
+.about{
+    background:#f5f7fb;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.about-photo{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:50%;
+    display:block;
+    margin:0 auto 25px;
+    border:5px solid #ede9fe;
+}
+
+.about-content p{
+    color:#64748b;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+/* EDUCATION */
+#education{
+    background:white;
+}
+
+.education-card{
+    max-width:800px;
+    margin:auto;
+    background:#f8fafc;
+    padding:30px;
+    border-left:6px solid #7c3aed;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+}
+
+.education-card h3{
+    color:#7c3aed;
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+/* SKILLS */
+.skills{
+    background:#f5f7fb;
+}
+
+.skill-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.skill-card{
+    background:white;
+    padding:30px 20px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+}
+
+.skill-card h3{
+    color:#7c3aed;
+    margin-bottom:8px;
+}
+
+.skill-card p{
+    color:#64748b;
+}
+
+/* PROJECTS */
+#projects{
+    background:white;
+}
+
+.project-container{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project-card{
+    background:#f8fafc;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-card h3{
+    color:#7c3aed;
+    margin-bottom:12px;
+}
+
+.project-card p{
+    color:#64748b;
+    margin-bottom:15px;
+}
+
+.technology span{
+    display:inline-block;
+    background:#ede9fe;
+    color:#7c3aed;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:13px;
+    margin:3px;
+}
+
+/* CONTACT */
+.contact{
+    background:#f5f7fb;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.contact-info p{
+    margin:18px 0;
+    font-size:17px;
+}
+
+.contact-info strong{
+    color:#7c3aed;
+}
+
+.contact-info a{
+    color:#7c3aed;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.social{
+    margin-top:10px;
+}
+
+.social a{
+    color:white;
+    text-decoration:none;
+    margin:0 8px;
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+
+    .home{
+        flex-wrap:wrap;
+        text-align:center;
+    }
+
+    .home-text{
+        flex:100%;
+    }
+
+    .description{
+        margin:auto;
+    }
+
+    .skill-container,
+    .project-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        gap:12px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .home h1{
+        font-size:38px;
+    }
+
+    .profile-photo{
+        width:270px;
+        height:340px;
+    }
+
+    .skill-container,
+    .project-container{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header>
-        <nav>
-            <div class="logo">Ruby Ann.</div>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">&lt;RubyAnn /&gt;</div>
 
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
 
-    <!-- HOME -->
-    <section class="hero" id="home">
+<!-- HOME -->
+<section class="home" id="home">
 
-        <div class="hero-container">
+    <div class="home-text">
 
-            <div class="hero-text">
+        <p class="welcome">
+            &lt; PROGRAMMING PROFILE /&gt;
+        </p>
 
-                <h1>Hello, I'm <span>Ruby Ann</span></h1>
+        <h1>
+            Hello, I'm <span>Ruby Ann</span>
+        </h1>
 
-                <h2>BS Information Technology Student & Aspiring Programmer</h2>
+        <p class="description">
+            A 3rd year BS Information Technology student
+            passionate about programming, web development,
+            networking, and creating useful digital solutions.
+        </p>
 
-                <p>
-                    I am a 3rd year Information Technology student who enjoys
-                    creating websites, learning programming, and developing
-                    useful digital systems.
-                </p>
+        <div class="buttons">
 
-                <a href="#projects" class="btn">View My Projects</a>
+            <a href="#projects" class="btn">
+                View Projects
+            </a>
 
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
-
-            </div>
-
-
-            <div class="profile-container">
-
-                <!-- PROFILE PICTURE -->
-                <img
-                    class="profile-photo"
-                    src="1000073615.jpg"
-                    alt="Ruby Ann Profile Photo"
-                >
-
-            </div>
+            <a href="#contact" class="btn btn-light">
+                Contact Me
+            </a>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- ABOUT -->
-    <section id="about">
+    <!-- PICTURE -->
+    <div class="home-photo">
 
-        <div class="container">
+        <img
+            src="data:image/jpeg;base64,PASTE_IMAGE_CODE_HERE"
+            alt="Ruby Ann"
+            class="profile-photo"
+        >
 
-            <h2 class="section-title">
-                About <span>Me</span>
-            </h2>
+    </div>
 
-            <div class="about-content">
 
-                <div class="about-text">
+    <!-- PROGRAMMING CODE -->
+    <div class="code-box">
 
-                    <h3>Hi, I'm Ruby Ann!</h3>
+<pre><code><span class="code-purple">const</span> developer = {
 
-                    <p>
-                        I am a Bachelor of Science in Information Technology
-                        student with a passion for programming and technology.
-                    </p>
+    name: <span class="code-green">"Ruby Ann"</span>,
 
-                    <p>
-                        I enjoy designing websites, creating simple systems,
-                        learning new technologies, and improving my coding
-                        skills through different projects.
-                    </p>
+    course:
+        <span class="code-green">"BS Information Technology"</span>,
 
-                    <p>
-                        My goal is to become a skilled programmer and build
-                        useful applications that can help students, schools,
-                        and communities.
-                    </p>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <p>
-                        <strong>Name:</strong>
-                        Ruby Ann D. Ocumen
-                    </p>
-
-                    <p>
-                        <strong>Course:</strong>
-                        Bachelor of Science in Information Technology
-                    </p>
-
-                    <p>
-                        <strong>Year:</strong>
-                        3rd Year Student
-                    </p>
-
-                    <p>
-                        <strong>School:</strong>
-                        Nueva Vizcaya State University
-                    </p>
-
-                    <p>
-                        <strong>Program:</strong>
-                        Information Technology Program
-                    </p>
-
-                    <p>
-                        <strong>Location:</strong>
-                        Bayombong, Nueva Vizcaya
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-    <section class="skills" id="skills">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Skills</span>
-            </h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>HTML5</h3>
-                    <p>Creating structured and semantic web pages.</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>CSS3</h3>
-                    <p>Designing responsive and modern websites.</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">⚡</div>
-                    <h3>JavaScript</h3>
-                    <p>Adding interactive features to websites.</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">⚛️</div>
-                    <h3>React.js</h3>
-                    <p>Building modern component-based interfaces.</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Git / GitHub</h3>
-                    <p>Managing and sharing programming projects.</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">🌐</div>
-                    <h3>Networking</h3>
-                    <p>Understanding basic computer networking concepts.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section id="education">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Education</span>
-            </h2>
-
-            <div class="education-card">
-
-                <h3>2023 - Present</h3>
-
-                <h4>
-                    Bachelor of Science in Information Technology
-                </h4>
-
-                <p>
-                    <strong>Nueva Vizcaya State University</strong>
-                </p>
-
-                <p>
-                    Information Technology Program
-                </p>
-
-                <p>
-                    Bayombong, Nueva Vizcaya
-                </p>
-
-                <p>
-                    Currently a 3rd Year Student
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Projects</span>
-            </h2>
-
-            <div class="projects-grid">
-
-                <div class="project-card">
-
-                    <div class="number">01</div>
-
-                    <h3>QR Code Classroom Attendance</h3>
-
-                    <p>
-                        A classroom attendance system that uses QR codes
-                        to make student attendance faster and easier.
-                    </p>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <div class="number">02</div>
-
-                    <h3>Online Enrollment System</h3>
-
-                    <p>
-                        A simple online enrollment system designed to help
-                        students submit and manage enrollment information.
-                    </p>
-
-                </div>
-
-
-                <div class="project-card">
-
-                    <div class="number">03</div>
-
-                    <h3>Student Programming Portfolio</h3>
-
-                    <p>
-                        A personal portfolio website showcasing my skills,
-                        education, projects, and programming journey.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CODE -->
-    <section class="code-section">
-
-        <div class="container">
-
-            <h2 class="section-title">
-                My <span>Programming Profile</span>
-            </h2>
-
-            <div class="code-box">
-
-<pre>
-<span class="purple">const</span> developer = {
-
-    name: <span class="green">"Ruby Ann"</span>,
-
-    course: <span class="green">"BS Information Technology"</span>,
-
-    year: <span class="green">"3rd Year"</span>,
+    year: <span class="code-blue">"3rd Year"</span>,
 
     skills: [
-        <span class="green">"HTML"</span>,
-        <span class="green">"CSS"</span>,
-        <span class="green">"JavaScript"</span>,
-        <span class="green">"React.js"</span>,
-        <span class="green">"Networking"</span>
+        <span class="code-green">"HTML"</span>,
+        <span class="code-green">"CSS"</span>,
+        <span class="code-green">"JavaScript"</span>,
+        <span class="code-green">"Networking"</span>
     ],
 
-    goal: <span class="green">"Build useful systems"</span>
+    goal:
+        <span class="code-green">"Build useful systems"</span>
 
-};
+};</code></pre>
 
-<span class="blue">console</span>.log(developer);
-</pre>
+    </div>
 
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-content">
+
+        <p>
+            I am a Bachelor of Science in Information Technology
+            student interested in web development, programming,
+            networking, and creating useful digital solutions.
+        </p>
+
+        <p>
+            As a 3rd year BSIT student, I continue to improve my skills
+            in different programming technologies and explore how
+            technology can help solve real-world problems.
+        </p>
+
+        <p>
+            My goal is to become a skilled IT professional and build
+            useful, user-friendly, and innovative systems.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-card">
+
+        <h3>
+            Bachelor of Science in Information Technology
+        </h3>
+
+        <p>
+            <strong>Nueva Vizcaya State University</strong>
+        </p>
+
+        <p>Information Technology Program</p>
+
+        <p>Bayombong, Nueva Vizcaya</p>
+
+        <p>
+            <strong>3rd Year Student</strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+
+    <h2 class="section-title">
+        Technologies & Skills
+    </h2>
+
+    <div class="skill-container">
+
+        <div class="skill-card">
+            <h3>🌐 HTML5</h3>
+            <p>Web Structure</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🎨 CSS3</h3>
+            <p>Web Design</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>⚡ JavaScript</h3>
+            <p>Web Interaction</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>⚛️ React.js</h3>
+            <p>Frontend Development</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🐙 Git / GitHub</h3>
+            <p>Version Control</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>🌐 Networking</h3>
+            <p>Network Fundamentals</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <h2 class="section-title">My Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+
+            <h3>📱 QR Code Classroom Attendance</h3>
+
+            <p>
+                A classroom attendance system concept using
+                QR codes for faster attendance recording
+                and monitoring.
+            </p>
+
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
             </div>
 
         </div>
 
-    </section>
+
+        <div class="project-card">
+
+            <h3>🎓 Online Enrollment System</h3>
+
+            <p>
+                A system concept designed to make student
+                enrollment and clearance verification
+                more convenient.
+            </p>
+
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+        </div>
 
 
-    <!-- CONTACT -->
-    <section id="contact">
+        <div class="project-card">
 
-        <div class="container">
+            <h3>💻 Student Programming Portfolio</h3>
 
-            <h2 class="section-title">
-                Contact <span>Me</span>
-            </h2>
+            <p>
+                A personal portfolio website presenting
+                education, skills, projects, and
+                programming interests.
+            </p>
 
-            <div class="contact-content">
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
 
-                <div class="contact-card">
+        </div>
 
-                    <h3>Let's Connect!</h3>
+    </div>
 
-                    <p>
-                        If you want to know more about me, my projects,
-                        or my programming journey, feel free to contact me.
-                    </p>
-
-                </div>
+</section>
 
 
-                <div class="contact-card">
+<!-- CONTACT -->
+<section class="contact" id="contact">
 
-                    <h3>Contact Information</h3>
+    <h2 class="section-title">
+        Contact Me
+    </h2>
 
-                    <div class="contact-item">
-                        <strong>📧 Email:</strong><br>
-                        <a href="mailt
+    <div class="contact-box">
+
+        <div class="contact-info">
+
+            <p>
+                <strong>Name:</strong><br>
+                Ruby Ann D. Ocumen
+            </p>
+
+            <p>
+                <strong>Email:</strong><br>
+                <a href="mailto:ocumenrubyann02@gmail.com">
+                    ocumenrubyann02@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Facebook:</strong><br>
+                Ruby Ann Duque Ocumen
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Ruby Ann | Student Programming Portfolio
+    </p>
+
+    <div class="social">
+
+        <a href="mailto:ocumenrubyann02@gmail.com">
+            Email
+        </a>
+
+        |
+
+        <a href="#contact">
+            Facebook
+        </a>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
