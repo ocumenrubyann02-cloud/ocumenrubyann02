@@ -71,10 +71,11 @@ nav ul li a:hover {
     flex: 1;
 }
 
-.home-text small {
+.welcome {
     color: #7c3aed;
     font-size: 18px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .home-text h1 {
@@ -86,15 +87,8 @@ nav ul li a:hover {
     color: #7c3aed;
 }
 
-.home-text h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.home-text p {
-    max-width: 600px;
-    margin-bottom: 25px;
-    color: #64748b;
+.buttons {
+    margin-top: 25px;
 }
 
 .buttons a {
@@ -106,30 +100,42 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.btn-primary {
+.btn {
     background: #7c3aed;
     color: white;
 }
 
-.btn-secondary {
+.btn-light {
     border: 2px solid #7c3aed;
     color: #7c3aed;
+    background: white;
 }
 
-/* PROFILE PHOTO */
-.profile-container {
+/* CODE BOX */
+.code-box {
     flex: 1;
-    display: flex;
-    justify-content: center;
+    background: #111827;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow-x: auto;
 }
 
-.profile-photo {
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 10px solid #ede9fe;
-    box-shadow: 0 10px 30px rgba(124,58,237,0.25);
+.code-box pre {
+    color: #e5e7eb;
+    font-size: 15px;
+}
+
+.code-purple {
+    color: #c084fc;
+}
+
+.code-green {
+    color: #86efac;
+}
+
+.code-blue {
+    color: #60a5fa;
 }
 
 /* SECTIONS */
@@ -149,7 +155,7 @@ section {
     background: #f5f7fb;
 }
 
-.about-box {
+.about-content {
     max-width: 900px;
     margin: auto;
     background: white;
@@ -158,18 +164,28 @@ section {
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-.about-box h3 {
-    color: #7c3aed;
-    margin-bottom: 15px;
+.profile-circle {
+    width: 100px;
+    height: 100px;
+    background: #7c3aed;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto 25px;
 }
 
-.about-box p {
+.about-content p {
     color: #64748b;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 /* EDUCATION */
-.education {
+#education {
     background: white;
 }
 
@@ -198,7 +214,7 @@ section {
     background: #f5f7fb;
 }
 
-.skills-grid {
+.skill-container {
     max-width: 1000px;
     margin: auto;
     display: grid;
@@ -219,21 +235,21 @@ section {
     transform: translateY(-8px);
 }
 
-.skill-icon {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
-
 .skill-card h3 {
     color: #7c3aed;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: #64748b;
 }
 
 /* PROJECTS */
-.projects {
+#projects {
     background: white;
 }
 
-.projects-grid {
+.project-container {
     max-width: 1100px;
     margin: auto;
     display: grid;
@@ -243,8 +259,8 @@ section {
 
 .project-card {
     background: #f8fafc;
+    padding: 30px;
     border-radius: 15px;
-    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: 0.3s;
 }
@@ -253,31 +269,17 @@ section {
     transform: translateY(-8px);
 }
 
-.project-image {
-    height: 170px;
-    background: #7c3aed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 60px;
-}
-
-.project-content {
-    padding: 22px;
-}
-
-.project-content h3 {
+.project-card h3 {
     color: #7c3aed;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.project-content p {
+.project-card p {
     color: #64748b;
     margin-bottom: 15px;
 }
 
-.tech {
+.technology span {
     display: inline-block;
     background: #ede9fe;
     color: #7c3aed;
@@ -293,7 +295,7 @@ section {
 }
 
 .contact-box {
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
     background: white;
     padding: 35px;
@@ -302,44 +304,16 @@ section {
 }
 
 .contact-info {
-    margin-bottom: 25px;
+    text-align: left;
 }
 
 .contact-info p {
-    margin: 10px 0;
+    margin: 18px 0;
+    font-size: 17px;
 }
 
 .contact-info strong {
     color: #7c3aed;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 13px;
-    margin-bottom: 15px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-form textarea {
-    height: 130px;
-    resize: none;
-}
-
-form button {
-    background: #7c3aed;
-    color: white;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-form button:hover {
-    background: #6d28d9;
 }
 
 /* FOOTER */
@@ -360,21 +334,20 @@ footer {
     margin: 0 8px;
 }
 
+.social a:hover {
+    color: #c084fc;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
 
     .home {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
     }
 
-    .home-text p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .skills-grid,
-    .projects-grid {
+    .skill-container,
+    .project-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -396,13 +369,8 @@ footer {
         font-size: 38px;
     }
 
-    .profile-photo {
-        width: 250px;
-        height: 250px;
-    }
-
-    .skills-grid,
-    .projects-grid {
+    .skill-container,
+    .project-container {
         grid-template-columns: 1fr;
     }
 
@@ -417,7 +385,10 @@ footer {
 
 <!-- NAVIGATION -->
 <nav>
-    <div class="logo">&lt;RubyAnn /&gt;</div>
+
+    <div class="logo">
+        &lt;RubyAnn /&gt;
+    </div>
 
     <ul>
         <li><a href="#home">Home</a></li>
@@ -427,35 +398,62 @@ footer {
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+
 </nav>
+
 
 <!-- HOME -->
 <section class="home" id="home">
 
     <div class="home-text">
 
-        <small>WELCOME TO MY PORTFOLIO</small>
-
-        <h1>Hello, I'm <span>Ruby Ann</span></h1>
-
-        <h2>3rd Year BSIT Student</h2>
-
-        <p>
-            A passionate Information Technology student interested in
-            programming, web development, networking, and creating useful
-            digital solutions.
+        <p class="welcome">
+            &lt; PROGRAMMING PROFILE /&gt;
         </p>
 
+        <h1>
+            Hello, I'm <span>Ruby Ann</span>
+        </h1>
+
         <div class="buttons">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
+
+            <a href="#projects" class="btn">
+                View Projects
+            </a>
+
+            <a href="#contact" class="btn btn-light">
+                Contact Me
+            </a>
+
         </div>
 
     </div>
 
-    <div class="profile-container">
-        <!-- Replace profile.jpg with your actual picture -->
-        <img src="profile.jpg" alt="Ruby Ann Profile Picture" class="profile-photo">
+
+    <!-- PROGRAMMING CODE -->
+    <div class="code-box">
+
+<pre><code><span class="code-purple">const</span> developer = {
+
+    name: <span class="code-green">"Ruby Ann"</span>,
+
+    course:
+        <span class="code-green">"BS Information Technology"</span>,
+
+    year: <span class="code-blue">"3rd Year"</span>,
+
+    skills: [
+        <span class="code-green">"HTML"</span>,
+        <span class="code-green">"CSS"</span>,
+        <span class="code-green">"JavaScript"</span>,
+        <span class="code-green">"Networking"</span>
+    ],
+
+    goal:
+        <span class="code-green">"Build useful systems"</span>
+
+};</code></pre>
+
     </div>
 
 </section>
@@ -464,16 +462,20 @@ footer {
 <!-- ABOUT ME -->
 <section class="about" id="about">
 
-    <h2 class="section-title">About Me</h2>
+    <h2 class="section-title">
+        About Me
+    </h2>
 
-    <div class="about-box">
+    <div class="about-content">
 
-        <h3>Hi! I'm Ruby Ann.</h3>
+        <div class="profile-circle">
+            RA
+        </div>
 
         <p>
-            I am a Bachelor of Science in Information Technology student
-            interested in web development, programming, networking,
-            and creating useful digital solutions.
+            I am a Bachelor of Science in Information Technology
+            student interested in web development, programming,
+            networking, and creating useful digital solutions.
         </p>
 
         <p>
@@ -493,21 +495,33 @@ footer {
 
 
 <!-- EDUCATION -->
-<section class="education" id="education">
+<section id="education">
 
-    <h2 class="section-title">Education</h2>
+    <h2 class="section-title">
+        Education
+    </h2>
 
     <div class="education-card">
 
-        <h3>Bachelor of Science in Information Technology</h3>
+        <h3>
+            Bachelor of Science in Information Technology
+        </h3>
 
-        <p><strong>Nueva Vizcaya State University</strong></p>
+        <p>
+            <strong>Nueva Vizcaya State University</strong>
+        </p>
 
-        <p>Information Technology Program</p>
+        <p>
+            Information Technology Program
+        </p>
 
-        <p>Bayombong, Nueva Vizcaya</p>
+        <p>
+            Bayombong, Nueva Vizcaya
+        </p>
 
-        <p><strong>3rd Year Student</strong></p>
+        <p>
+            <strong>3rd Year Student</strong>
+        </p>
 
     </div>
 
@@ -517,43 +531,39 @@ footer {
 <!-- TECHNOLOGIES & SKILLS -->
 <section class="skills" id="skills">
 
-    <h2 class="section-title">Technologies & Skills</h2>
+    <h2 class="section-title">
+        Technologies & Skills
+    </h2>
 
-    <div class="skills-grid">
+    <div class="skill-container">
 
         <div class="skill-card">
-            <div class="skill-icon">🌐</div>
-            <h3>HTML5</h3>
+            <h3>🌐 HTML5</h3>
             <p>Web Structure</p>
         </div>
 
         <div class="skill-card">
-            <div class="skill-icon">🎨</div>
-            <h3>CSS3</h3>
-            <p>Web Styling</p>
+            <h3>🎨 CSS3</h3>
+            <p>Web Design</p>
         </div>
 
         <div class="skill-card">
-            <div class="skill-icon">⚡</div>
-            <h3>JavaScript</h3>
+            <h3>⚡ JavaScript</h3>
             <p>Web Interaction</p>
         </div>
 
         <div class="skill-card">
-            <div class="skill-icon">⚛️</div>
-            <h3>React.js</h3>
+            <h3>⚛️ React.js</h3>
             <p>Frontend Development</p>
         </div>
 
         <div class="skill-card">
-            <div class="skill-icon">🐙</div>
-            <h3>Git & GitHub</h3>
+            <h3>🐙 Git / GitHub</h3>
             <p>Version Control</p>
         </div>
 
         <div class="skill-card">
-            <div class="skill-icon">🌐</div>
-            <h3>Networking</h3>
+            <h3>🌐 Networking</h3>
             <p>Network Fundamentals</p>
         </div>
 
@@ -563,82 +573,72 @@ footer {
 
 
 <!-- PROJECTS -->
-<section class="projects" id="projects">
+<section id="projects">
 
-    <h2 class="section-title">My Projects</h2>
+    <h2 class="section-title">
+        My Projects
+    </h2>
 
-    <div class="projects-grid">
+    <div class="project-container">
 
-        <!-- PROJECT 1 -->
         <div class="project-card">
 
-            <div class="project-image">
-                📱
-            </div>
+            <h3>
+                📱 QR Code Classroom Attendance
+            </h3>
 
-            <div class="project-content">
+            <p>
+                A classroom attendance system concept using
+                QR codes for faster attendance recording
+                and monitoring.
+            </p>
 
-                <h3>QR Code Classroom Attendance</h3>
-
-                <p>
-                    A classroom attendance system that uses QR codes
-                    to record student attendance quickly and efficiently.
-                </p>
-
-                <span class="tech">HTML</span>
-                <span class="tech">CSS</span>
-                <span class="tech">JavaScript</span>
-
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
             </div>
 
         </div>
 
 
-        <!-- PROJECT 2 -->
         <div class="project-card">
 
-            <div class="project-image">
-                🎓
-            </div>
+            <h3>
+                🎓 Online Enrollment System
+            </h3>
 
-            <div class="project-content">
+            <p>
+                A system concept designed to make student
+                enrollment and clearance verification
+                more convenient.
+            </p>
 
-                <h3>Online Enrollment System</h3>
-
-                <p>
-                    A proposed system that helps students manage
-                    enrollment, clearance, payments, and sectioning online.
-                </p>
-
-                <span class="tech">HTML</span>
-                <span class="tech">CSS</span>
-                <span class="tech">JavaScript</span>
-
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
             </div>
 
         </div>
 
 
-        <!-- PROJECT 3 -->
         <div class="project-card">
 
-            <div class="project-image">
-                💻
-            </div>
+            <h3>
+                💻 Student Programming Portfolio
+            </h3>
 
-            <div class="project-content">
+            <p>
+                A personal portfolio website presenting
+                education, skills, projects, and
+                programming interests.
+            </p>
 
-                <h3>Student Portfolio Website</h3>
-
-                <p>
-                    A personal portfolio website that presents my
-                    profile, education, skills, projects, and contact information.
-                </p>
-
-                <span class="tech">HTML</span>
-                <span class="tech">CSS</span>
-                <span class="tech">JavaScript</span>
-
+            <div class="technology">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
             </div>
 
         </div>
@@ -648,57 +648,35 @@ footer {
 </section>
 
 
-<!-- CONTACT -->
+<!-- CONTACT ME -->
 <section class="contact" id="contact">
 
-    <h2 class="section-title">Contact Me</h2>
+    <h2 class="section-title">
+        Contact Me
+    </h2>
 
     <div class="contact-box">
 
         <div class="contact-info">
 
             <p>
-                <strong>Name:</strong>
+                <strong>Name:</strong><br>
                 Ruby Ann D. Ocumen
             </p>
 
             <p>
-                <strong>Email:</strong>
-                ocumenrubyann02@gmail.com
+                <strong>Email:</strong><br>
+                <a href="mailto:ocumenrubyann02@gmail.com">
+                    ocumenrubyann02@gmail.com
+                </a>
             </p>
 
             <p>
-                <strong>Facebook:</strong>
+                <strong>Facebook:</strong><br>
                 Ruby Ann Duque Ocumen
             </p>
 
         </div>
-
-
-        <form id="contactForm">
-
-            <input
-                type="text"
-                placeholder="Your Name"
-                required
-            >
-
-            <input
-                type="email"
-                placeholder="Your Email"
-                required
-            >
-
-            <textarea
-                placeholder="Your Message"
-                required
-            ></textarea>
-
-            <button type="submit">
-                Send Message
-            </button>
-
-        </form>
 
     </div>
 
@@ -713,27 +691,20 @@ footer {
     </p>
 
     <div class="social">
-        <a href="#contact">Facebook</a>
+
+        <a href="mailto:ocumenrubyann02@gmail.com">
+            Email
+        </a>
+
         |
-        <a href="mailto:ocumenrubyann02@gmail.com">Email</a>
+
+        <a href="#contact">
+            Facebook
+        </a>
+
     </div>
 
 </footer>
-
-
-<script>
-
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    alert("Thank you! Your message has been submitted.");
-
-    this.reset();
-
-});
-
-</script>
 
 </body>
 </html>
